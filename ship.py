@@ -43,7 +43,7 @@ def upgradesMenu():
     elif choice == 2:
         changeUpgrade()
     elif choice == 3:
-        loseUpgrade()
+        loseUpgradeSelect()
     elif choice == 0:
         return
     upgradesMenu()
@@ -142,21 +142,17 @@ def damageComp(comp):
         print(f"{comp} took 1 damage.")
         data.ship[comp][0] = hp
         if hp == 0:
-            print(f"{comp} was destroyed.")
             destroyComp(comp)
     elif hp == 0:
         print(f"{comp} was already destroyed. You took 1 damage.")
         modifyHP(-1)
 
 def destroyComp(comp):
+    print(f"{comp} was destroyed.")
     upgrade = data.ship[comp][2]
     if upgrade != ["None"]:
-        upgradeLost(upgrade)
-    
-    # Additional steps to handle compartment destruction could go here
-    # For example, setting the compartment as destroyed or removing it from the ship
-    data.ship[comp][0] = 0  # Setting current integrity (chp) to 0, indicating it's destroyed
-    # Any other destruction logic (like removing crew, etc.)
+        loseUpgrade(upgrade)
+    followers.loseCrewmate(comp)
 
 def getComp(index: int = None, given_comp_list: list = None):
     print()
@@ -318,7 +314,7 @@ def downgradeComp(comp):
 def sortUpgrades(list):
     list.sort(key=lambda x: x[1])
 
-def upgradeLost(upgrade):
+def loseUpgrade(upgrade):
     """Finds and removes an upgrade from either data.ship or data.unequipped_ship_upgrades."""
     
     # Check if the upgrade is in the specified compartment
@@ -339,7 +335,7 @@ def upgradeLost(upgrade):
     
     print(f"Upgrade '{upgrade[0]}' not found.")  # If the upgrade doesn't exist
 
-def loseUpgrade():
+def loseUpgradeSelect():
     """Displays the menu for losing an upgrade and calls upgradeLost()."""
     sortUpgrades(data.unequipped)
     print("\nSelect one to lose.")
@@ -363,7 +359,7 @@ def loseUpgrade():
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return
-    upgradeLost(upgrades[choice - 1])  # Pass upgrade name to upgradeLost
+    loseUpgrade(upgrades[choice - 1])  # Pass upgrade name to upgradeLost
         
 if __name__ == "__main__":
     load()
