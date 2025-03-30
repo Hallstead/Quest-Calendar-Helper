@@ -1,0 +1,81 @@
+Felix Factotum
+Level: 2
+Virtue: 1
+Str: 7
+Dex: 10
+Con: 3
+Int: 13
+Wis: 5
+Cha: 7
+HP: 28
+Max HP: 28
+Def: 2
+Atk: 13
+Dmg: 5(2d8)+7
+Gold: 57
+Credits: 12
+Amber: 50
+Boon: 1
+
+-Abilities-
+Investigator: +2 on checks to search for things.
+Reroll: Once per page; reroll a die and take the new result.
+Lucky: When you roll a 1 on a d20 roll; reroll the die and take the new result.
+Inspiration 2: You have two Inspiration Points to power your abilities.
+Combat Surge: Use one Inspiration Point. Add 1d4 to a single Attack or Damage roll.
+Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
+Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d20 roll that does not include Intellect.
+
+-Inventory-
+2x Health Potion (1d4)
+3x Combat Tonic (S)
+1x Solar Grenade
+3x Warding Ointment
+1x Nimblecap
+1x Foresight Flower
+1x Antidote
+
+-Equipment-
+Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
+Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step
+Custom; Item; +7 Strength; +7 Dexterity; +7 Constitution; +7 Intellect; +7 Wisdom; +7 Charisma; +7 Health; +7 Attack; Defense; +0 Damage_Step; +7 Damage
+--Unequipped--
+Mysterious Canister; Item; +1 Strength; +1 Dexterity; +1 Constitution; +1 Intellect; +1 Wisdom; +1 Charisma; +7 Health
+Blossom Wand; Item; +1 Intellect; +1 Attack
+
+-Followers-
+
+-Ship Stats-
+Aim: 25
+Evasion: 10
+Shield: 1
+
+-Ship Compartments-
+Engine Room: 3/3/None/Detective; 2023; +1 Integrity; Investigator; 
+Bridge: 3/3/Sensors; Bridge; +5 Aim/Analist; 2023; +1 Integrity; Student; 
+Labs: 3/3/None/Convoy; 2023; +1 Integrity; Survivalist; 
+Weapons: 3/3/Cannons; Weapons; +10 Aim/Telepath; 2023; +1 Integrity; Arcane Adept; 
+Crew Quarters: 3/3/None/None
+Cargo: 3/3/None/None
+
+--Upgrades Reserve--
+Escape Pod; Cargo; +1 Integrity
+
+--Crewmate Reserve--
+Explorer; 2023; +1 Integrity; Danger Sense; 
+SD-247; 2023; +1 Integrity; Computers; 
+Zoologist; 2023; +1 Integrity; Animal Tamer; 
+
+-Party-
+Slot 1: None
+Slot 2: None
+Slot 3: None
+Slot 4: None
+Slot 5: None
+Bug 1: None
+Bug 2: None
+Bug 3: None
+Bug 4: None
+Bug 5: None
+
+-Party Reserve-

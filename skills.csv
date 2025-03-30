@@ -1,0 +1,28 @@
+name;cost;use;description;years
+Animal Tamer;1;O;Add +2 to all rolls to train and handle animals.;2021, 2022, 2023
+Arcane Adept;1;O;Add +2 to all rolls to handle and deal with magic.;2021, 2022, 2023, 2024
+Athlete;1;O;Add +2 to all rolls to overcome physical and athletic hurdles.;2021, 2022, 2023, 2024
+Bug Tamer;1;O;Add +2 to all rolls to train and handle bugs.;2024
+Computers;1;O;Add +2 to all rolls to operate computer systems.;2023
+Danger Sense;1;O;Add +2 to all rolls to avoid traps and surprise hazards.;2021, 2022, 2023, 2024
+Engineering;1;O;Add +2 to all rolls to build and repair devices.;2023
+Intimidating;1;O;Add +2 to all rolls to threaten and intimidate;2021, 2022, 2023, 2024
+Investigator;1;O;Add +2 to all rolls to search and investigate;2021, 2022, 2023, 2024
+Locksmith;1;O;Add +2 to all rolls to pick a lock.;2021, 2022, 2023, 2024
+Persuasive;1;O;Add +2 to all rolls to persuade and convince.;2021, 2022, 2023, 2024
+Piloting;1;O;Add +2 to all rolls to navigate and fly a ship.;2023
+Stealthy;1;O;Add +2 to all rolls to sneak and remain hidden.;2021, 2022, 2023, 2024
+Student;1;O;Add +2 to all rolls to recall history and knowledge.;2021, 2022, 2023, 2024
+Survivalist;1;O;Add +2 to all rolls to endure long journeys.;2021, 2022, 2023, 2024
+Lucky;1;B;Whenever you roll a 1 on any d20, reroll and take the new result. If the new result is also a 1, it must be kept.;2021, 2022, 2023, 2024
+Hunter;;O;The Travel Guide always has 1 Meal Ration you can use (max of 1 per day).;2021
+Alchemy;;O;Once per day, you can pay the Alchemist 5 gold for him to make you a Health Potion (restore d4 Health).;2021
+Gadget;;B;Once per day, pay 2 gold to gain a +2 to any single die roll.;2021
+Command Fate;;B;Once per Rest, reroll any single die roll once.;2021
+Revive;1;B;Once per Rest, when your Health drops to zero, restore it to 25% of your max Health, rounded up.;2021, 2022
+Guard;;B;The Body Guard can take damage in place of your hero.;2021
+Baby Dragon;;I;Once per Combat, the baby dragon allows you to add an extra d6 to an Attack and Damage roll.;2021
+Shield;;B;Once per Page: Reduce total incoming damage by 3.;2022
+Pickpocket;2;O;Once per Page when encountering a non-enemy character: Gain d4 in gold. On a result of 4: Lose 1 Virtue Point.;2021, 2022
+Integrity;;;;2023
+;;;;

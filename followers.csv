@@ -1,0 +1,81 @@
+name;year;skill1;skill2;condition
+Travel Guide;2021;Danger Sense;Hunter;If you ever roll a 1 on a Survival roll (before bonuses), the Travel Guide leaves.
+Burglers;2021;Locksmith;Stealthy;If your Health ever reaches zero, the Burglars take all your gold and leave.
+Alchemist;2021;Alchemy;;If you ever buy a Health Potion elsewhere, the Alchemist leaves.
+Minstrel;2021;Persuasive;Animal Tamer;If your Health ever reaches zero, the Minstrel leaves.
+Arificer;2021;Student;Gadget;If you ever take a Rest without using the Artificer's Gadget Ability, the Artificer leaves.
+Fairies;2021;Lucky;Command Fate;If you ever roll a 1 when using either of the Fairies' abilities, the Fairies leave.
+Priestess;2021;Revive;;If your health drops to zero a second time before you Rest, the Priestess will leave.
+Body Guard;2021;Guard;;Once the Guard takes a total of 30 damage, he leaves. The Body Guard can't heal.
+Baby Dragon;2021;Baby Dragon;;The Baby Dragon requires 4 Meal Rations every time you take a Rest. If you cannot or do not feed it, it leaves.
+;;;;
+Thief;2022;Locksmith;Pickpocket;Upkeep: 5 gold
+Warrior;2022;Athlete;Animal Tamer;Upkeep: 5 gold
+Young Demon;2022;Intimidating;;If your Virtue ever goes above 5, the demon leaves.
+Tracker;2022;Survivalist;Lucky;Upkeep: 10 gold
+Raiders;2022;Stealthy;Danger Sense;Upkeep: 10 gold
+Sentry;2022;Investigator;Intimidating;Upkeep: 10 gold
+Sorceress;2022;Student;Revive;Upkeep: 10 gold
+Bodyguard;2022;Shield;Athlete;Upkeep: 10 gold
+Mage;2022;Danger Sense;Arcane Adept;Upkeep: 10 gold
+;;;;
+Crew;;;;
+Zoologist;2023;+1 Integrity;Animal Tamer;
+Convoy;2023;+1 Integrity;Survivalist;
+SD-247;2023;+1 Integrity;Computers;
+Detective;2023;+1 Integrity;Investigator;
+Telepath;2023;+1 Integrity;Arcane Adept;
+Analist;2023;+1 Integrity;Student;
+Mechanic;2023;+1 Integrity;Engineering;
+Scout Drone;2023;+1 Integrity;Stealthy;
+Demolitionist;2023;+1 Integrity;Locksmith;
+Merchant;2023;+1 Integrity;Persuasive;
+Navigator;2023;+1 Integrity;Piloting;
+Soldier;2023;+1 Integrity;Athlete;
+Explorer;2023;+1 Integrity;Danger Sense;
+;;;;
+Party;;;;
+Berserker;2024;Intimidating/SC/1;+1 Attack/S/7;2 Health
+Swashbuckler;2024;Stealthy/DH/1;+1 Damage/C/7;2 Health
+Monk;2024;Athlete/SC/1;+1 Defense/D/7;3 Health
+Archer;2024;Bug Tamer/DH/1;+1 Attack/S/7;2 Health
+Fire Dancer;2024;Arcane Adept/SC/1;+1 Damage/C/7;3 Health
+Bard;2024;Persuasive/DH/1;Heal 1/H/9;4 Health
+Ivy Bushtail;2024;Student/DH/1;Heal 1/H/9;4 Health
+Sky Featherbeak;2024;Survivalist/SC/1;+2 Defense/D/7;3 Health
+Wild Chanter;2024;Investigator/SC/1;+d4 Defense/D/6;3 Health
+Ranger;2024;Survivalist/DH/1;+d4 Attack/S/6;4 Health
+Pirate;2024;Locksmith/SC/1;+d4 Damage/C/6;5 Health
+Blade Striker;2024;Danger Sense/DH/1;+3 Attack/S/6;4 Health
+Tech Mage;2024;Investigator/SC/1;+3 Damage/C/6;5 Health
+Whisperfoot;2024;Locksmith/DH/1;+3 Defense/D/6;5 Health
+Alchemist;2024;Bug Tamer/SC/1;Heal 1/H/8;5 Health
+Frost Mage;2024;Arcane Adept/DH/1;+d6 Attack/S/6;5 Health
+Knight;2024;Danger Sense/SC/1;+d6 Defense/D/5;6 Health
+Bloodrager;2024;Intimidating/DH/1;+d6 Damage/C/5;6 Health
+Assassin;2024;Stealthy/SC/1;+4 Attack/S/5;6 Health
+Minstrel;2024;Persuasive/DH/1;Heal 1/H/8;7 Health
+Tanker;2024;Athlete/SC/1;+d8 Attack/S/5;6 Health
+Enchantress;2024;Student/DH/1;+4 Defense/D/5;7 Health
+;;;;
+Bugs;;;;
+Firefly;2024;+1 Strength/S/4;;2 Health
+Lightning Bug;2024;+1 Dexterity/C/5;;2 Health
+Tough Snail;2024;+1 Constitution/DH/8;;2 Health
+Cricket;2024;+1 Intellect/H/4;;2 Health
+Horn Beetle;2024;+1 Wisdom/S/4;;3 Health
+Dragonfly;2024;+2 Strength/C/5;;2 Health
+Caterpillar;2024;+2 Charisma/D/3;;3 Health
+Butterfly;2024;+2 Dexterity/H/5;;2 Health
+Worker Bee;2024;+2 Constitution/SC/7;;2 Health
+Warrior Bee;2024;+d4 Strength/SC/7;;2 Health
+Fur Moth;2024;+2 Wisdom/D/3;;3 Health
+Pill Bug;2024;+2 Intellect/DH/5;;3 Health
+Lady Bug;2024;+d4 Charisma/SC/7;;3 Health
+Inch Worm;2024;+2 Dex/SC/6;;3 Health
+Green Beetle;2024;+d4 Constitution/DH/4;;3 Health
+Fur Beetle;2024;+d4 Wisdom/DH/6;;4 Health
+Seskel;2024;+d6 Intellect/SC/4;;2 Health
+Roly Poly;2024;+d6 Charisma/SC/5;;4 Health
+Quick Beetle;2024;+d4 Dexterity/DH/3;;4 Health
+Hard Snail;2024;+d6 Constitution/DH/4;;4 Health

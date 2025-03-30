@@ -1,0 +1,55 @@
+Health Potion (1d4): Consumed on use. Restores d4 health. Can't be used in Combat./2021, 2024
+Health Potion (2d4): Consumed on use. Restores 2d4 health. Can't be used in Combat./2022
+Med Kit: Consumed on use. Restores 2d4 health. Can't be used in Combat./2023
+Greater Health Potion (d10): Consumed on use. Restores d10 health. Can't be used in Combat./2021
+Greater Health Potion (2d8): Consumed on use. Restores 2d8 health. Can't be used in Combat./2022
+Meal Rations: Consumed on use. Needed if you can't find food and water./2021, 2022, 2023, 2024
+Honey: Consumed on use. Use as 1 Health Potion or d6 Meal Rations./2024
+Campfire: Consumed on use. Take a Rest./2024
+Ship Parts: Consumed on use. Restores 1 point of Integrity to any ship compartment./2023
+Antidote: Consumed on use. Removes the "Poisoned" and "Infected" conditions/2022, 2023, 2024
+Cleansing Crystal: Consumed on use. Removes the "Cursed" condition./2024
+Holy Water: Consumed on use. Removes the "Cursed" condition./2022
+Repair Kit: Consumed on use. Removes the "Malfunction" condition./2023
+Bandages: Consumed on use. Removes an Injury inflicted from death./2021, 2022
+Ointment: Consumed on use. Removes a single wound inflicted from death./2021, 2022
+Phoenix Tears: Consumed on use. Removes a single wound inflicted from death./2024
+Potion of Clarity: Consumed on use. Removes a single Trauma inflicted from death./2021, 2022
+Wound Sealant: Consumed on use. Removes Injuries inflicted from death./2023
+Combat Tonic (S): Consumed on use. Add d4 to a single Attack roll./2021, 2024
+Combat Tonic (All): Consumed on use. Add d4 to all Attack rolls on a page./2022, 2023
+Dragon's Fire (S): Consumed on use. Add d4 to a single Damage roll./2021, 2024
+Dragon's Fire (All): Consumed on use. Add d4 to a all Damage rolls for the page./2022
+Solar Grenade: Consumed on use. Add d4 to all Damage rolls on a page./2023
+Warding Ointment: Consumed on use. Add d4 to a single Defense roll./2024
+Shield Battery: Consumed on use. Add +2 Defense for the page./2023
+Brawnberry: Consumed on use. Add d4 to Strength on a single roll./2024
+Strengthener Rx: Consumed on use. Add d4 to Strength for the page./2023
+Potion of Giant Strength: Consumed on use. Add d6 to Strength for the page./2021, 2022
+Nimblecap: Consumed on use. Add d4 to Dexterity on a single roll./2024
+Adrenaline Rx: Consumed on use. Add d4 to Dexterity for the page./2023
+Potion of the Wind: Consumed on use. Add d6 to Dexterity for the page./2021, 2022
+Stoutseed: Consumed on use. Add d4 to Constitution on a single roll./2024
+Fortifier Rx: Consumed on use. Add d4 to Constitution for the page./2023
+Potion of Fortitude: Consumed on use. Add d6 to Constitution for the page./2021, 2022
+Foresight Flower: Consumed on use. Add d4 to Intellect on a single roll./2024
+Stimulant Rx: Consumed on use. Add d4 to Intellect for the page./2023
+Potion of the Gods: Consumed on use. Add d6 to Intellect for the page./2021, 2022
+Sageleaf: Consumed on use. Add d4 to Wisdom on a single roll./2024
+IntulSense Rx: Consumed on use. Add d4 to Wisdom for the page./2023
+Draught of Enrichment: Consumed on use. Add d6 to Wisdom for the page./2021, 2022
+Glamour Stone: Consumed on use. Add d4 to Charisma on a single roll./2024
+Relaxant Rx: Consumed on use. Add d4 to Charisma for the page./2023
+Aged Wine: Consumed on use. Add d6 to Charisma for the page./2021, 2022
+Physical Elixir: Consumed on use. Add a d8 to all Strength, Dexterity, and Constitution for the page./2021
+Mental Draught: Consumed on use. Add a d8 to all Intellect, Wisdom, and Charisma for the page./2021
+Map & Compass: Add +2 to Wisdom rolls while traveling. Can't have more than one./2021, 2022
+Lockpicking Tools: Add +2 to rolls when picking locks. Can't have more than one./2021, 2022
+Sharpened Weapon: Add +1 to all Damage rolls. Max of +3./2021, 2022
+Fortified Weapon: Add +1 to all Attack rolls. Max of +3./2021, 2022
+Spellbook: Gain 1 extra spell point./2021
+Mule: Add +2 to Wisdom rolls while traveling on land. Can't have more than one mount./2021, 2022
+Horse: Add +4 to Wisdom rolls while traveling on land. Can't have more than one mount./2021, 2022
+Seaquine: Add +4 to Wisdom rolls while traveling on land or at sea. Can't have more than one mount./2022
+Row Boat: Add +2 to Survival rolls while traveling on the river. Mount required. Can't have more than one boat./2021
+Magical Boat: Add +4 to Survival rolls while traveling on the river. No Mount required. Can't have more than one boat./2021

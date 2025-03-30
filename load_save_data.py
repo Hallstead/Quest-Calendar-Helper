@@ -1,0 +1,284 @@
+import data
+
+def load():
+    with open("Felix Factotum 2025.txt", "r") as f:
+        data.name = f.readline().strip()
+        data.level = int(f.readline().split(":")[1].strip())
+        data.virtue = int(f.readline().split(":")[1].strip())
+        data.strength = int(f.readline().split(":")[1].strip())
+        data.dexterity = int(f.readline().split(":")[1].strip())
+        data.constitution = int(f.readline().split(":")[1].strip())
+        data.intellect = int(f.readline().split(":")[1].strip())
+        data.wisdom = int(f.readline().split(":")[1].strip())
+        data.charisma = int(f.readline().split(":")[1].strip())
+        data.hp = int(f.readline().split(":")[1].strip())
+        data.max_hp = int(f.readline().split(":")[1].strip())
+        data.defense = int(f.readline().split(":")[1].strip())
+        data.attack = int(f.readline().split(":")[1].strip())
+        dmg_line = f.readline().strip()
+        data.damage_step = int(dmg_line.split(":")[1].strip()[0])
+        data.damage = int(dmg_line.split(":")[1].strip()[-1])
+        data.gold = int(f.readline().split(":")[1].strip())
+        data.credits = int(f.readline().split(":")[1].strip())
+        data.amber = int(f.readline().split(":")[1].strip())
+        data.boon = int(f.readline().split(":")[1].strip())
+
+        line = readline(f) # clear blank lines and
+        if line.startswith("-"): #step past "-Abilities-"
+            line = readline(f)
+        while goodline(line):
+            data.abilities.append(line)
+            line = readline(f)
+
+        line = readline(f) #step past "-Inventory-"
+        while goodline(line):
+            count, item_name = line.split("x ")
+            if int(count) > 0:
+                if item_name in data.inventory:
+                    data.inventory[item_name] += int(count)
+                else:
+                    data.inventory[item_name] = int(count)
+            line = readline(f)
+        
+        line = readline(f) #step past "-Equipment-"
+        while goodline(line):
+            l = parseListLine(line)
+            data.equipment.append(l)
+            line = readline(f)
+
+        line = readline(f) #step past "--Unequipped--"
+        while goodline(line):
+            l = parseListLine(line)
+            data.unequipped.append(l)
+            line = readline(f)
+        
+        line = readline(f) #step past "-Followers-"
+        while goodline(line):
+            l = parseListLine(line)
+            data.followers.append(l)
+            line = readline(f)
+            
+        line = readline(f) #step past -Ship Stats-
+        while goodline(line):
+            attr, val = line.split(":")
+            setattr(data, attr.strip().lower(), int(val.strip()))
+            line = readline(f)
+
+        line = readline(f) #step past -Ship Compartments-
+        while goodline(line):
+            compartment, l = line.split(":")
+            chp, max_chp, upgrade, crewmate = l.strip().split("/")
+            upgrade = parseListLine(upgrade)
+            crewmate = parseListLine(crewmate)
+            data.ship[compartment] = [int(chp.strip()), int(max_chp.strip()), upgrade, crewmate]
+            line = readline(f)
+
+        line = readline(f) #step past --Upgrades Reserve--
+        while goodline(line):
+            l = parseListLine(line)
+            data.unequipped_ship_upgrades.append(l)
+            line = readline(f)
+           
+        line = readline(f) #step past --Crewmates Reserve--
+        while goodline(line):
+            l = parseListLine(line)
+            data.crewmate_reserve.append(l)
+            line = readline(f)
+
+        line = readline(f) #step past -Party-
+        while goodline(line):
+            slot, member = line.split(":")
+            member = member.strip()
+            if member != "None":
+                member = parseListLine(member)
+            data.party[slot] = member
+            line = readline(f)
+
+        line = readline(f) #step past -Party Reserve-
+        while goodline(line):
+            l = parseListLine(line)
+            data.party_reserve.append(l)
+            line = readline(f)
+
+    loadItemsFile()
+    loadEquipmentFile()
+    loadFollowersFile()
+    loadSkillsFile()
+    loadShipUpgradesFile()
+
+def readline(f):
+    while True:  # Keep reading until a non-blank line or EOF
+        line = f.readline()
+        if line == "":  # Detect EOF immediately
+            #print("***EOF***")
+            return None
+        line = line.strip()  # Remove whitespace
+        if line:  # If it's not empty after stripping, return it
+            return line
+
+def parseListLine(line):
+    l = line.split(";")
+    for i in range(len(l)):
+        l[i] = l[i].strip()
+    return l
+
+def goodline(line):
+    return line and not line.startswith("-")
+
+def loadItemsFile():
+    with open("items.txt", "r") as f:
+        for line in f:
+            line = line.strip()
+            if line == "":
+                continue
+            item, l = line.split(": ")
+            desc, years = l.split("/")
+            data.item_dict[item] = [desc, years]
+
+def loadEquipmentFile():
+    with open("equipment.txt", "r") as f:
+        for line in f:
+            l = line.strip()
+            if l == "":
+                continue
+            l = l.split(",")
+            for i in range(len(l)):
+                l[i] = l[i].strip()
+            year = l[1]
+            slot = l[2]
+            if year == "2021":
+                slot = "all"
+            l.remove(year)
+            if not year in data.all_equipment:
+                data.all_equipment[year] = {}
+            if not slot in data.all_equipment[year]:
+                data.all_equipment[year][slot] = []
+            data.all_equipment[year][slot].append(l)
+
+def loadFollowersFile():
+    with open("followers.csv", "r") as f:
+        key = ""
+        for line in f:
+            l = line.strip().split(";")
+            if l[0].strip() == "name":
+                continue
+            if l[0].strip() == "":
+                key = ""
+                continue
+            if l[0].strip() == "Party":
+                key = "Party"
+                continue
+            if l[0].strip() == "Bugs":
+                key = "Bugs"
+                continue
+            year = l[1].strip()
+            # l.remove(year)
+            if year not in data.all_followers:
+                data.all_followers[year] = {}
+            if key not in data.all_followers[year]:
+                data.all_followers[year][key] = []
+            data.all_followers[year][key].append(l)
+
+def loadSkillsFile():
+    with open("skills.csv", "r") as f:
+        for line in f:
+            sname, cost, use, desc, yearsUsed = line.split(";")
+            yearsUsed = yearsUsed.split(", ")
+            if sname.strip() == "" or sname.strip() == "name":
+                continue
+            data.skills_dict[sname] = [desc, cost, use, yearsUsed]
+
+def loadShipUpgradesFile():
+    with open("ship upgrades.csv", "r") as f:
+        for line in f:
+            upgrade, comp, bonus = line.split(";")
+            if upgrade.strip() == "" or upgrade.strip() == "Upgrade Name":
+                continue
+            if comp not in data.all_ship_upgrades:
+                data.all_ship_upgrades[comp] = []
+            data.all_ship_upgrades[comp].append([upgrade.strip(), comp.strip(), bonus.strip()])
+
+def save():
+    with open("Felix Factotum 2025.txt", "w") as f:
+        f.write(f"{data.name}\n")
+        f.write(f"Level: {data.level}\n")
+        f.write(f"Virtue: {data.virtue}\n")
+        f.write(f"Str: {data.strength}\n")
+        f.write(f"Dex: {data.dexterity}\n")
+        f.write(f"Con: {data.constitution}\n")
+        f.write(f"Int: {data.intellect}\n")
+        f.write(f"Wis: {data.wisdom}\n")
+        f.write(f"Cha: {data.charisma}\n")
+        f.write(f"HP: {data.hp}\n")
+        f.write(f"Max HP: {data.max_hp}\n")
+        f.write(f"Def: {data.defense}\n")
+        f.write(f"Atk: {data.attack}\n")
+        f.write(f"Dmg: {data.damage_step}({data.damage_chart[data.damage_step]})+{data.damage}\n")
+        f.write(f"Gold: {data.gold}\n")
+        f.write(f"Credits: {data.credits}\n")
+        f.write(f"Amber: {data.amber}\n")
+        f.write(f"Boon: {data.boon}\n")
+        f.write("\n")
+        f.write("-Abilities-\n")
+        for a in data.abilities:
+            f.write(f"{a}\n")
+        f.write("\n")
+        f.write("-Inventory-\n")
+        for i in data.inventory:
+            f.write(f"{data.inventory[i]}x {i}\n")
+        f.write("\n-Equipment-\n")
+        for e in data.equipment:
+            line = prepListLine(e)
+            f.write(f"{line}\n")
+        f.write("--Unequipped--\n")
+        for u in data.unequipped:
+            line = prepListLine(u)
+            f.write(f"{line}\n")
+        f.write("\n")
+        f.write("-Followers-\n")
+        for follower in data.followers:
+            line = prepListLine(follower)
+            f.write(f"{line}\n")
+        f.write("\n")
+        f.write("-Ship Stats-\n")
+        f.write(f"Aim: {data.aim}\n")
+        f.write(f"Evasion: {data.evasion}\n")
+        f.write(f"Shield: {data.shield}\n")
+        f.write("\n-Ship Compartments-\n")
+        for compartment in data.ship:
+            chp = data.ship[compartment][0]
+            max_chp = data.ship[compartment][1]
+            upgrade = data.ship[compartment][2]
+            upgrade = prepListLine(upgrade)
+            crewmate = data.ship[compartment][3]
+            crewmate = prepListLine(crewmate)
+            f.write(f"{compartment}: {chp}/{max_chp}/{upgrade}/{crewmate}\n")
+        f.write("\n--Upgrades Reserve--\n")
+        for u in data.unequipped_ship_upgrades:
+            line = prepListLine(u)
+            f.write(f"{line}\n")
+        f.write("\n--Crewmate Reserve--\n")
+        for u in data.crewmate_reserve:
+            line = prepListLine(u)
+            f.write(f"{line}\n")
+        f.write("\n-Party-\n")
+        for slot in data.party:
+            follower = prepListLine(data.party[slot])
+            f.write(f"{slot}: {follower}\n")
+        f.write("\n-Party Reserve-\n")
+        for follower in data.party_reserve:
+            line = prepListLine(str(follower))
+            f.write(f"{line}\n")
+
+def prepListLine(list):
+    if list == "None":
+        return "None"
+    line = str(list[0])
+    for i in range(1, len(list)):
+        line += "; " + str(list[i])
+    return line
+
+if __name__ == "__main__":
+    load()
+    save()
+
