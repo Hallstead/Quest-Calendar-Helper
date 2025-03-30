@@ -1,8 +1,7 @@
-import random
+import crewmates
 import data
 from load_save_data import load, save
-import ship
-from util import checkValidYear, enter, getBool, getValidChoice, getYear, isValidInt, printMenuFromList
+from util import checkValidYear, getBool, getValidChoice, getYear, printMenuFromList
 
 def followersMenu():
     # TODO: Allow for predetermined year
@@ -14,7 +13,7 @@ def followersMenu():
         followersMenu2021(year)
     elif year == 2023:
         # crewmates
-        crewmateMenu()
+        crewmates.crewmateMenu()
     elif year == 2024:
         # party members
         pass
@@ -41,9 +40,6 @@ def followersMenu2021(year):
         return
     followersMenu2021(year)
 
-def followersMenu2024(year):
-    pass
-
 def printFollowers():
     print("\n--Followers--")
     if len(data.followers) == 0:
@@ -55,7 +51,7 @@ def printFollowers():
 def getFollower2021(year):
     print()
     follower_names = {f[0] for f in data.followers}
-    offers, count = printMenuFromList(data.all_followers[str(year)][""], follower_names, printOneFollower)
+    offers, count = printMenuFromList(data.all_followers[str(year)], follower_names, printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return
@@ -185,49 +181,7 @@ def loseAtVirtueFollowers():
                 loseFollower("Young Demon")
                 return
 
-def drawCard():
-    colors = ["Red", "Black"]
-    suits = {"Red": ["Hearts", "Diamonds"], "Black":["Clubs", "Spades"]}
-    color = random.choice(colors)
-    num = random.randint(0, 26)
-    if num == 0:
-        print(f"You drew the {color} Joker.")
-        return {"color": color, "val": 14, "suit": "J"}
-    else:
-        val = (num - 1) % 13 + 1
-        suit = suits[color][(num-1)//13]
-        cardName = ""
-        if val == 1:
-            cardName = "Ace"
-        elif val == 11:
-            cardName = "Jack"
-        elif val == 12:
-            cardName = "Queen"
-        elif val == 13:
-            cardName = "King"
-        else:
-            cardName = str(val)
-        print(f"You drew the {cardName} of {suit}.")
-        return {"color": color, "val": val, "suit": suit[0]}
-
-def followerAbilityActivates(card: dict, targetVal: int, targetSuit: str) -> bool:
-    if card["suit"] == "J":
-        if card["color"] == "Red" and ("D" in targetSuit or "H" in targetSuit):
-            return True
-        elif card["color"] == "Black" and ("S" in targetSuit or "C" in targetSuit):
-            return True
-        else:
-            return False
-    else:
-        if card["suit"] in targetSuit and card["val"] >= targetVal:
-            return True
-        return False
-    
-def followerTakesDamage(card: dict) -> bool:
-    if card["val"] >= 11:
-        return True
-    return False
-    
 if __name__ == "__main__":
     load()
+    followersMenu2021(2021)
     save()

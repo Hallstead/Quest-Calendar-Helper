@@ -54,7 +54,7 @@ Shield: 1
 
 -Ship Compartments-
 Engine Room: 3/3/None/None
-Bridge: 3/3/Sensors; Bridge; +5 Aim/None 
+Bridge: 3/3/Sensors; Bridge; +5 Aim/None
 Labs: 3/3/None/None
 Weapons: 3/3/Cannons; Weapons; +10 Aim/None
 Crew Quarters: 3/3/None/None

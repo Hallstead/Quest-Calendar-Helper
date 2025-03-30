@@ -4,7 +4,6 @@ import followers
 import ship
 from util import enter, getBool, getValidChoice, printMenuFromList
 
-
 def crewmateMenu():
     print("\n--Crewmate Management Menu--")
     print("1. Get Crewmate")
@@ -27,7 +26,7 @@ def getCrewmate():
     print()
     owned_crewmates = {comp[3][0] for comp in data.ship.values() if comp[3][0] != "None"}
     owned_crewmates.update({c[0] for c in data.crewmate_reserve})
-    offers, count = printMenuFromList(data.all_followers["2023"][""], owned_crewmates, followers.printOneFollower)
+    offers, count = printMenuFromList(data.all_followers["2023"], owned_crewmates, followers.printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return

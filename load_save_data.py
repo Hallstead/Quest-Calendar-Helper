@@ -93,8 +93,14 @@ def load():
             member = member.strip()
             if member != "None":
                 member = parseListLine(member)
-            data.party[slot] = member
+                if member[3]:
+                    data.party.append(member)
+                else:
+                    data.bugs.append(member)
             line = readline(f)
+
+        data.party_limit = max(5, len(data.party))
+        data.bugs_limit = max(5, len(data.bugs))
 
         line = readline(f) #step past -Party Reserve-
         while goodline(line):
@@ -164,22 +170,11 @@ def loadFollowersFile():
             l = line.strip().split(";")
             if l[0].strip() == "name":
                 continue
-            if l[0].strip() == "":
-                key = ""
-                continue
-            if l[0].strip() == "Party":
-                key = "Party"
-                continue
-            if l[0].strip() == "Bugs":
-                key = "Bugs"
-                continue
             year = l[1].strip()
             # l.remove(year)
             if year not in data.all_followers:
-                data.all_followers[year] = {}
-            if key not in data.all_followers[year]:
-                data.all_followers[year][key] = []
-            data.all_followers[year][key].append(l)
+                data.all_followers[year] = []
+            data.all_followers[year].append(l)
 
 def loadSkillsFile():
     with open(path + "skills.csv", "r") as f:
@@ -264,9 +259,20 @@ def save():
             line = prepListLine(u)
             f.write(f"{line}\n")
         f.write("\n-Party-\n")
-        for slot in data.party:
-            follower = prepListLine(data.party[slot])
-            f.write(f"{slot}: {follower}\n")
+        i = 1
+        for member in data.party:
+            m = prepListLine(member)
+            f.write(f"Slot {i}: {m}\n")
+            i += 1
+        for x in range(i, data.party_limit + 1):
+            f.write(f"Slot {x}: None\n")
+        i = 1
+        for bug in data.bugs:
+            b = prepListLine(bug)
+            f.write(f"Bug {i}: {b}\n")
+            i += 1
+        for x in range(i, data.party_limit + 1):
+            f.write(f"Bug {x}: None\n")
         f.write("\n-Party Reserve-\n")
         for follower in data.party_reserve:
             line = prepListLine(str(follower))

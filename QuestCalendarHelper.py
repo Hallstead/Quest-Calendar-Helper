@@ -7,17 +7,6 @@ from load_save_data import load, save
 from ship import printShip, shipMenu
 from util import enter, getBool, getValidChoice
 
-# def printList(items):
-#     longest = 0
-#     for item in items:
-#         if len(item) > longest:
-#             longest = len(item)
-#     with open("items2.txt", "w"):
-#         for item in items:
-#             spaces = longest - len(item) + 2
-#             print(f"{item}:{spaces * ' '}{item_dict[item][0]}")
-#     print()
-
 def printAbilities():
     print("\n--Abilities--")
     for a in data.abilities:

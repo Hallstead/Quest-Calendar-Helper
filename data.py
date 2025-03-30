@@ -33,10 +33,13 @@ evasion = 10
 shield = 1
 ship = {}
 unequipped_ship_upgrades = []
-crewmate_reserve = []
-party = {}
-party_reserve = []
 all_ship_upgrades = {}
+crewmate_reserve = []
+party = []
+party_limit = 5
+bugs = []
+bugs_limit = 5
+party_reserve = []
 damage_chart= ["1d6", "1d8", "1d10", "1d12", "2d6", "2d8", "2d10", "2d12", "3d8", "3d10", "3d12", "2d10+2d8", "1d12+3d10, 4d12"]
 years = [2021, 2022, 2023, 2024, 2025, 2026]
 
