@@ -1,5 +1,6 @@
 
 import random
+from crewmates import crewmateMenu
 import data
 import followers
 from hp import modifyHP
@@ -26,7 +27,7 @@ def shipMenu():
         upgradesMenu()
     elif choice == 4:
         # manage crewmates
-        followers.crewmateMenu()
+        crewmateMenu()
     elif choice == 0:
         return
     shipMenu()
