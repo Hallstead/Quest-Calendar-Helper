@@ -1,7 +1,9 @@
 import data
 
+path = "data/"
+
 def load():
-    with open("Felix Factotum 2025.txt", "r") as f:
+    with open(path + "Felix Factotum 2025.txt", "r") as f:
         data.name = f.readline().strip()
         data.level = int(f.readline().split(":")[1].strip())
         data.virtue = int(f.readline().split(":")[1].strip())
@@ -126,7 +128,7 @@ def goodline(line):
     return line and not line.startswith("-")
 
 def loadItemsFile():
-    with open("items.txt", "r") as f:
+    with open(path + "items.txt", "r") as f:
         for line in f:
             line = line.strip()
             if line == "":
@@ -136,7 +138,7 @@ def loadItemsFile():
             data.item_dict[item] = [desc, years]
 
 def loadEquipmentFile():
-    with open("equipment.txt", "r") as f:
+    with open(path + "equipment.txt", "r") as f:
         for line in f:
             l = line.strip()
             if l == "":
@@ -156,7 +158,7 @@ def loadEquipmentFile():
             data.all_equipment[year][slot].append(l)
 
 def loadFollowersFile():
-    with open("followers.csv", "r") as f:
+    with open(path + "followers.csv", "r") as f:
         key = ""
         for line in f:
             l = line.strip().split(";")
@@ -180,7 +182,7 @@ def loadFollowersFile():
             data.all_followers[year][key].append(l)
 
 def loadSkillsFile():
-    with open("skills.csv", "r") as f:
+    with open(path + "skills.csv", "r") as f:
         for line in f:
             sname, cost, use, desc, yearsUsed = line.split(";")
             yearsUsed = yearsUsed.split(", ")
@@ -189,7 +191,7 @@ def loadSkillsFile():
             data.skills_dict[sname] = [desc, cost, use, yearsUsed]
 
 def loadShipUpgradesFile():
-    with open("ship upgrades.csv", "r") as f:
+    with open(path + "ship upgrades.csv", "r") as f:
         for line in f:
             upgrade, comp, bonus = line.split(";")
             if upgrade.strip() == "" or upgrade.strip() == "Upgrade Name":
@@ -199,7 +201,7 @@ def loadShipUpgradesFile():
             data.all_ship_upgrades[comp].append([upgrade.strip(), comp.strip(), bonus.strip()])
 
 def save():
-    with open("Felix Factotum 2025.txt", "w") as f:
+    with open(path + "Felix Factotum 2025.txt", "w") as f:
         f.write(f"{data.name}\n")
         f.write(f"Level: {data.level}\n")
         f.write(f"Virtue: {data.virtue}\n")

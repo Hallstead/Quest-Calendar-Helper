@@ -52,7 +52,7 @@ def crewmateMenu():
         getCrewmate()
     elif choice == 2:
         assignCrewmateSelect()
-    elif choice == 2:
+    elif choice == 3:
         unassignCrewmateSelect()
     elif choice == 0:
         return
@@ -118,7 +118,6 @@ def unassignCrewmateSelect():
     if not comps_with_assigned_crewmates:
         print("No crewmates to unassign.")
         return
-
     print("\nSelect a crewmate to unassign:")
     comp = ship.getComp(3, comps_with_assigned_crewmates)
     if comp:

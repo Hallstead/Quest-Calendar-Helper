@@ -44,6 +44,8 @@ Mysterious Canister; Item; +1 Strength; +1 Dexterity; +1 Constitution; +1 Intell
 Blossom Wand; Item; +1 Intellect; +1 Attack
 
 -Followers-
+Baby Dragon; 2021; Baby Dragon; ; The Baby Dragon requires 4 Meal Rations every time you take a Rest. If you cannot or do not feed it, it leaves.
+Travel Guide; 2021; Danger Sense; Hunter; If you ever roll a 1 on a Survival roll (before bonuses), the Travel Guide leaves.
 
 -Ship Stats-
 Aim: 25
@@ -51,10 +53,10 @@ Evasion: 10
 Shield: 1
 
 -Ship Compartments-
-Engine Room: 3/3/None/Detective; 2023; +1 Integrity; Investigator; 
-Bridge: 3/3/Sensors; Bridge; +5 Aim/Analist; 2023; +1 Integrity; Student; 
-Labs: 3/3/None/Convoy; 2023; +1 Integrity; Survivalist; 
-Weapons: 3/3/Cannons; Weapons; +10 Aim/Telepath; 2023; +1 Integrity; Arcane Adept; 
+Engine Room: 3/3/None/None
+Bridge: 3/3/Sensors; Bridge; +5 Aim/None 
+Labs: 3/3/None/None
+Weapons: 3/3/Cannons; Weapons; +10 Aim/None
 Crew Quarters: 3/3/None/None
 Cargo: 3/3/None/None
 
@@ -64,7 +66,6 @@ Escape Pod; Cargo; +1 Integrity
 --Crewmate Reserve--
 Explorer; 2023; +1 Integrity; Danger Sense; 
 SD-247; 2023; +1 Integrity; Computers; 
-Zoologist; 2023; +1 Integrity; Animal Tamer; 
 
 -Party-
 Slot 1: None

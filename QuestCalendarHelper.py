@@ -1,11 +1,11 @@
 import data
 from equipment import equipmentMenu, printEquipment
-from followers import followersMenu2021, loseAtRestFollowers, loseAtVirtueFollowers, printFollowers
+import followers
 from hp import hpMenu
 from items import itemMenu, printItems
 from load_save_data import load, save
-from ship import crewmateMenu, shipMenu
-from util import checkValidYear, enter, getBool, getValidChoice, getYear
+from ship import shipMenu
+from util import enter, getBool, getValidChoice
 
 # def printList(items):
 #     longest = 0
@@ -76,7 +76,7 @@ def printCharacterSheet():
     printItems()
     printEquipment()
     enter()
-    printFollowers()
+    followers.printFollowers()
     # printShip()
     # printParty()
     # printFollowersReserve()
@@ -159,7 +159,7 @@ def rest():
     # TODO: check abilities for per Rest and uncheck them
     
     # Leave on Rest Followers
-    loseAtRestFollowers()
+    followers.loseAtRestFollowers()
             
 def virtueMenu():
     print("\n--Virtue Menu--")
@@ -182,7 +182,7 @@ def modifyVirtue(val):
         data.virtue = 10
     if data.virtue < -10:
         data.virtue = -10
-    loseAtVirtueFollowers()
+    followers.loseAtVirtueFollowers()
         
 def menu():
     while(True):
@@ -216,7 +216,7 @@ def menu():
         elif choice == 7: # Equipment
             equipmentMenu()
         elif choice == 8: # Followers
-            followersMenu()
+            followers.followersMenu()
         elif choice == 9: # Ship
             shipMenu()
         elif choice == 10: # Rest

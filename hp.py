@@ -1,5 +1,5 @@
 import data
-from followers import bodyGuardTakesDamage, loseAtDeathFollowers
+import followers
 from util import getValidChoice
 
 def hpMenu():
@@ -26,7 +26,7 @@ def hpMenu():
             val = -int(input("Damage taken: "))
         elif choice == 3:
             val = int(input("Damage taken by the Body Guard: "))
-            bodyGuardTakesDamage(val)
+            followers.bodyGuardTakesDamage(val)
             val = 0
         elif choice == 0:
             return
@@ -46,5 +46,5 @@ def modifyHP(val):
     if data.hp == 0:
         # TODO: check for Revive abilities
         print("You have died!")
-        loseAtDeathFollowers()
+        followers.loseAtDeathFollowers()
         
