@@ -8,7 +8,7 @@ from util import enter, getBool, getValidChoice, getYear, isValidInt, modifyAttr
 
 def shipMenu():
     print("\n--Ship Management Menu--")
-    print("1. View Compartments")
+    print("1. View Ship")
     print("2. Damage/Repair Compartment")
     print("3. Manage Ship Upgrades")
     print("4. Manage Crewmates")
@@ -55,6 +55,10 @@ def printShip():
     print(f"Shield: +{data.shield}\n")
     for comp in data.ship:
         printOneCompartmentFull(comp)
+    if data.crewmate_reserve:
+        print("\n--Crewmate Reserve--")
+        for c in data.crewmate_reserve:
+            followers.printOneFollower(c)
     
 def printOneCompartmentFull(comp: list):
     chp = data.ship[comp][0]

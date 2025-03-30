@@ -4,7 +4,7 @@ import followers
 from hp import hpMenu
 from items import itemMenu, printItems
 from load_save_data import load, save
-from ship import shipMenu
+from ship import printShip, shipMenu
 from util import enter, getBool, getValidChoice
 
 # def printList(items):
@@ -77,7 +77,7 @@ def printCharacterSheet():
     printEquipment()
     enter()
     followers.printFollowers()
-    # printShip()
+    printShip()
     # printParty()
     # printFollowersReserve()
 
