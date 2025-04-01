@@ -25,7 +25,7 @@ def getCrewmate():
     """Function to get a new crewmate based on available crewmates."""
     print()
     owned_crewmates = {comp[3][0] for comp in data.ship.values() if comp[3][0] != "None"}
-    owned_crewmates.update({c[0] for c in data.crewmate_reserve})
+    owned_crewmates.update({c[0] for c in data.crew_reserve})
     offers, count = printMenuFromList(data.all_followers["2023"], owned_crewmates, followers.printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
@@ -38,17 +38,17 @@ def getCrewmate():
         if not comp:
             return
         elif acrew[0] == "None":
-            assignCrewmate(comp, len(data.crewmate_reserve) - 1)
+            assignCrewmate(comp, len(data.crew_reserve) - 1)
         else:
-            if confirmSwapCrewmates(comp, len(data.crewmate_reserve) - 1):
-                swapCrewmates(comp, len(data.crewmate_reserve) - 1)
+            if confirmSwapCrewmates(comp, len(data.crew_reserve) - 1):
+                swapCrewmates(comp, len(data.crew_reserve) - 1)
             else:
                 print("\nDid not confirm. Leaving Crewmates as assigned.")
                 enter()
                 return
 
 def reserveCrewmate(crewmate):
-    data.crewmate_reserve.append(crewmate)
+    data.crew_reserve.append(crewmate)
 
 def unassignCrewmateSelect():
     """Function to unassign a crewmate."""
@@ -64,7 +64,7 @@ def unassignCrewmateSelect():
 def assignCrewmateSelect():
     """Function to equip a new crewmate from the reserve."""
     # Extract crewmates that are considered available for equipping
-    available_crewmates = [f for f in data.crewmate_reserve]
+    available_crewmates = [f for f in data.crew_reserve]
     if not available_crewmates:
         print("No available crewmates to assign.")
         return
@@ -78,10 +78,10 @@ def assignCrewmateSelect():
     if not comp:
         return
     elif acrew[0] == "None":
-        assignCrewmate(comp, len(data.crewmate_reserve) - 1)
+        assignCrewmate(comp, len(data.crew_reserve) - 1)
     else:
-        if confirmSwapCrewmates(comp, len(data.crewmate_reserve) - 1):
-            swapCrewmates(comp, len(data.crewmate_reserve) - 1)
+        if confirmSwapCrewmates(comp, len(data.crew_reserve) - 1):
+            swapCrewmates(comp, len(data.crew_reserve) - 1)
         else:
             print("\nDid not confirm. Leaving Crewmates as assigned.")
             enter()
@@ -89,7 +89,7 @@ def assignCrewmateSelect():
 
 def assignCrewmate(comp, index):
     """Function to equip a selected crewmate."""
-    crewmate = data.crewmate_reserve.pop(index)  # Getting the selected crewmate from reserve list
+    crewmate = data.crew_reserve.pop(index)  # Getting the selected crewmate from reserve list
     data.ship[comp][3] = crewmate  # Add the selected crewmate to the current compartment's crewmates
     print(f"Assigned {crewmate[0]} to {comp}.")
 
@@ -104,7 +104,7 @@ def confirmSwapCrewmates(comp, uIndex):
     print(f"\Compartent -{comp}- already has an assigned crewmate:")
     followers.printOneFollower(data.ship[comp][3])
     print("Attempting to replace them with: ")
-    followers.printOneFollower(data.crewmate_reserve[uIndex])
+    followers.printOneFollower(data.crew_reserve[uIndex])
     return getBool("Would you like to make the swap?")
 
 def swapCrewmates(comp, uIndex):

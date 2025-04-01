@@ -56,9 +56,9 @@ def printShip():
     print(f"Shield: +{data.shield}\n")
     for comp in data.ship:
         printOneCompartmentFull(comp)
-    if data.crewmate_reserve:
+    if data.crew_reserve:
         print("\n--Crewmate Reserve--")
-        for c in data.crewmate_reserve:
+        for c in data.crew_reserve:
             followers.printOneFollower(c)
     
 def printOneCompartmentFull(comp: list):

@@ -68,7 +68,7 @@ Explorer; 2023; +1 Integrity; Danger Sense;
 SD-247; 2023; +1 Integrity; Computers; 
 
 -Party-
-Slot 1: None
+Slot 1: Blade Striker; 2024; Danger Sense/DH/1; +3 Attack/S/6; 4 Health
 Slot 2: None
 Slot 3: None
 Slot 4: None

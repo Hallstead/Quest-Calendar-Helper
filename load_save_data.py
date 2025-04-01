@@ -84,12 +84,18 @@ def load():
         line = readline(f) #step past --Crewmates Reserve--
         while goodline(line):
             l = parseListLine(line)
-            data.crewmate_reserve.append(l)
+            data.crew_reserve.append(l)
             line = readline(f)
 
+        pm_count = 0
+        b_count = 0
         line = readline(f) #step past -Party-
         while goodline(line):
             slot, member = line.split(":")
+            if slot.lower().startswith("slot"):
+                pm_count += 1
+            elif slot.lower().startswith("bug"):
+                b_count += 1
             member = member.strip()
             if member != "None":
                 member = parseListLine(member)
@@ -99,8 +105,8 @@ def load():
                     data.bugs.append(member)
             line = readline(f)
 
-        data.party_limit = max(5, len(data.party))
-        data.bugs_limit = max(5, len(data.bugs))
+        data.party_limit = max(5, pm_count)
+        data.bugs_limit = max(5, b_count)
 
         line = readline(f) #step past -Party Reserve-
         while goodline(line):
@@ -255,7 +261,7 @@ def save():
             line = prepListLine(u)
             f.write(f"{line}\n")
         f.write("\n--Crewmate Reserve--\n")
-        for u in data.crewmate_reserve:
+        for u in data.crew_reserve:
             line = prepListLine(u)
             f.write(f"{line}\n")
         f.write("\n-Party-\n")

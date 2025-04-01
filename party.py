@@ -2,6 +2,7 @@
 import random
 import data
 import followers
+from load_save_data import load, save
 import ship
 from util import enter, getBool, getValidChoice, printMenuFromList
 
@@ -9,73 +10,113 @@ from util import enter, getBool, getValidChoice, printMenuFromList
 def partyMenu():
     print("\n--Party Management Menu--")
     print("1. View Party")
-    print("1. Get Party Member")
-    print("2. Change Paety")
-    print("3. Lose Party Member")
+    print("2. Get Party Member")
+    print("3. Change Paety")
+    print("4. Lose Party Member")
     print("0. Go Back")
     choice = getValidChoice("Selection: ", 4)
     if choice == 1:
         printParty()
     elif choice == 2:
-        getCrewmate()
+        pb = getPartyBugsSelect()
+        if pb != None:
+            getPartyMember(pb)
     elif choice == 3:
         assignCrewmateSelect()
     elif choice == 4:
-        unassignCrewmateSelect()
+        removePartyMemberSelect()
     elif choice == 0:
         return
     partyMenu()
 
 def printParty():
-    print("--Party--")
+    print("\n--Party--")
     i = 1
     for p in data.party:
-        print(f"Slot {i}")
+        print(f"Slot {i}: ", end="")
+        followers.printOneFollower(p)
+        i += 1
+    for x in range(i, data.party_limit + 1):
+        print(f"Slot {x}: None")
+    i = 1
+    for b in data.bugs:
+        print(f"Bug {i}: ", end="")
+        followers.printOneFollower(b)
+        i += 1
+    for x in range(i, data.bugs_limit + 1):
+        print(f"Bug {x}: None")
 
-def getCrewmate():
+def isPartyMember(pm: list):
+    if len(pm) < 4:
+        raise Exception(f"Party member {pm} is not a valid follower.")
+    if pm[3]:
+        return True
+    return False
+
+def getPartyBugsSelect():
+    menu_options = ["Party Member", "Bug"]
+    _, limit = printMenuFromList(menu_options)
+    choice = getValidChoice("Selection: ", limit)
+    if choice == 0:
+        return None
+    elif choice == 1:
+        return True
+    elif choice == 2:
+        return False
+
+def getPartyMember(isPM: bool):
     """Function to get a new crewmate based on available crewmates."""
     print()
-    owned_crewmates = {comp[3][0] for comp in data.ship.values() if comp[3][0] != "None"}
-    owned_crewmates.update({c[0] for c in data.crewmate_reserve})
-    offers, count = printMenuFromList(data.all_followers["2023"][""], owned_crewmates, followers.printOneFollower)
+    owned = {member[0] for member in data.party}
+    owned.update({member[0] for member in data.party_reserve})
+    offers = [member for member in data.all_followers["2024"] if isPartyMember(member) == isPM]
+    offers, count = printMenuFromList(offers, owned, followers.printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return
-    crewmate = offers[choice-1]
-    reserveCrewmate(crewmate)
-    if getBool(f"Would you like to assign {crewmate[0]} to a compartment?"):
-        comp = ship.getComp(3)
-        acrew = data.ship[comp][3]
-        if not comp:
-            return
-        elif acrew[0] == "None":
-            assignCrewmate(comp, len(data.crewmate_reserve) - 1)
+    member = offers[choice-1]
+    reservePartyMember(member)
+    if getBool(f"Would you like to add {member[0]} to your party?"):
+        if checkRoomInParty(isPM):
+            addToParty(isPM, len(data.party_reserve) - 1)
         else:
-            if confirmSwapCrewmates(comp, len(data.crewmate_reserve) - 1):
-                swapCrewmates(comp, len(data.crewmate_reserve) - 1)
+            pIndex = selectPartyMemberIndex(isPM)
+            if pIndex == -1:
+                return
+            elif confirmSwapPartyMembers(isPM, pIndex, len(data.party_reserve) - 1):
+                swapPartyMembers(isPM, pIndex, len(data.party_reserve) - 1)
             else:
-                print("\nDid not confirm. Leaving Crewmates as assigned.")
+                print("\nDid not confirm. Leaving Party as is.")
                 enter()
                 return
 
-def reserveCrewmate(crewmate):
-    data.crewmate_reserve.append(crewmate)
+def selectPartyMemberIndex(isPM: bool):
+    party = data.party if isPM else data.bugs
+    offers, limit = printMenuFromList(party, None, followers.printOneFollower)
+    choice = getValidChoice("Selection: ", limit)
+    return choice - 1
 
-def unassignCrewmateSelect():
-    """Function to unassign a crewmate."""
-    comps_with_assigned_crewmates = [comp for comp in data.ship.keys() if data.ship[comp][3][0] != "None"]  # Get the assigned compartments
-    if not comps_with_assigned_crewmates:
-        print("No crewmates to unassign.")
+def checkRoomInParty(isPM: bool):
+    return len(data.party) < data.party_limit if isPM else len(data.bugs) < data.bugs_limit
+
+def reservePartyMember(pm):
+    data.party_reserve.append(pm)
+
+def removePartyMemberSelect():
+    party = data.party
+    party.extend(data.bugs)
+    if not party:
+        print("No party members or bugs to remove.")
         return
-    print("\nSelect a crewmate to unassign:")
-    comp = ship.getComp(3, comps_with_assigned_crewmates)
+    print("\nSelect a party member or bug to remove:")
+    comp = ship.getComp(3, party)
     if comp:
-        unassignCrewmate(comp)
+        removeFromParty(comp)
 
 def assignCrewmateSelect():
     """Function to equip a new crewmate from the reserve."""
     # Extract crewmates that are considered available for equipping
-    available_crewmates = [f for f in data.crewmate_reserve]
+    available_crewmates = [f for f in data.party_reserve]
     if not available_crewmates:
         print("No available crewmates to assign.")
         return
@@ -89,38 +130,45 @@ def assignCrewmateSelect():
     if not comp:
         return
     elif acrew[0] == "None":
-        assignCrewmate(comp, len(data.crewmate_reserve) - 1)
+        addToParty(comp, len(data.party_reserve) - 1)
     else:
-        if confirmSwapCrewmates(comp, len(data.crewmate_reserve) - 1):
-            swapCrewmates(comp, len(data.crewmate_reserve) - 1)
+        if confirmSwapPartyMembers(comp, len(data.party_reserve) - 1):
+            swapPartyMembers(comp, len(data.party_reserve) - 1)
         else:
-            print("\nDid not confirm. Leaving Crewmates as assigned.")
+            print("\nDid not confirm. Leaving Party as is.")
             enter()
             return
 
-def assignCrewmate(comp, index):
-    """Function to equip a selected crewmate."""
-    crewmate = data.crewmate_reserve.pop(index)  # Getting the selected crewmate from reserve list
-    data.ship[comp][3] = crewmate  # Add the selected crewmate to the current compartment's crewmates
-    print(f"Assigned {crewmate[0]} to {comp}.")
+def addToParty(isPM: bool, index: int) -> None:
+    if not checkRoomInParty(isPM):
+        print("Not enough room in the party")
+        return
+    member = data.party_reserve.pop(index)  # Getting the selected crewmate from reserve list
+    if isPM:
+        data.party.append(member)
+    else:
+        data.bugs.append(member)
+    print(f"Added {member} to the party.")
 
-def unassignCrewmate(comp):
+def removeFromParty(isPM: bool, index: int):
     """Function to unassign a selected crewmate."""
-    crewmate = data.ship[comp][3] # Remove from the equipped list in the specified compartment
-    reserveCrewmate(crewmate)  # Add back to reserve
-    data.ship[comp][3] = ["None"]
+    crewmate = data.ship[3] # Remove from the equipped list in the specified compartment
+    reservePartyMember(crewmate)  # Add back to reserve
+    data.ship[3] = ["None"]
     print(f"Unassigned {crewmate[0]}.")
 
-def confirmSwapCrewmates(comp, uIndex):
-    print(f"\Compartent -{comp}- already has an assigned crewmate:")
-    followers.printOneFollower(data.ship[comp][3])
-    print("Attempting to replace them with: ")
-    followers.printOneFollower(data.crewmate_reserve[uIndex])
+def confirmSwapPartyMembers(isPM: bool, pIndex: int, rIndex: int):
+    pm = data.party[pIndex] if isPM else data.bugs[pIndex]
+    rm = data.party_reserve[rIndex]
+    print(f"\nAttempting to swap the current party member:")
+    followers.printOneFollower(pm)
+    print("with this member: ")
+    followers.printOneFollower(rm)
     return getBool("Would you like to make the swap?")
 
-def swapCrewmates(comp, uIndex):
-    e = unassignCrewmate(comp)
-    u = assignCrewmate(comp, uIndex)
+def swapPartyMembers(isPM: bool, pIndex: int, uIndex: int):
+    removeFromParty(isPM, pIndex)
+    addToParty(isPM, uIndex)
 
 def loseCrewmate(comp):
     crewmate = data.ship[comp][3]
@@ -171,3 +219,7 @@ def followerTakesDamage(card: dict) -> bool:
         return True
     return False
     
+if __name__ == "__main__":
+    load()
+    partyMenu()
+    save()

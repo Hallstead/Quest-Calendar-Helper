@@ -73,10 +73,10 @@ def printOneFollower(f):
     condition = f[4]
     print(fname)
     if year == "2024":
-        skill, suits, val = skill1.split(":")
+        skill, suits, val = skill1.split("/")
         print(f"      {skill}: {suits} >= {val}")
         if skill2:
-            skill, suits, val = skill2.split(":")
+            skill, suits, val = skill2.split("/")
             print(f"      {skill}: {suits} >= {val}")
         if condition:
             print(f"      {condition}")
