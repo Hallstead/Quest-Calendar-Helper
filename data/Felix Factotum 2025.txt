@@ -68,15 +68,16 @@ Explorer; 2023; +1 Integrity; Danger Sense;
 SD-247; 2023; +1 Integrity; Computers; 
 
 -Party-
-Slot 1: Blade Striker; 2024; Danger Sense/DH/1; +3 Attack/S/6; 4 Health
-Slot 2: None
+Slot 1: Berserker; 2024; Intimidating/SC/1; +1 Attack/S/7; 2/2 Health
+Slot 2: Blade Striker; 2024; Danger Sense/DH/1; +3 Attack/S/6; 4/4 Health
 Slot 3: None
 Slot 4: None
 Slot 5: None
-Bug 1: None
+Bug 1: Lightning Bug; 2024; +1 Dexterity/C/5; ; 2/2 Health
 Bug 2: None
 Bug 3: None
 Bug 4: None
 Bug 5: None
 
 -Party Reserve-
+Swashbuckler; 2024; Stealthy/DH/1; +1 Damage/C/7; 2/2 Health

@@ -277,11 +277,11 @@ def save():
             b = prepListLine(bug)
             f.write(f"Bug {i}: {b}\n")
             i += 1
-        for x in range(i, data.party_limit + 1):
+        for x in range(i, data.bugs_limit + 1):
             f.write(f"Bug {x}: None\n")
         f.write("\n-Party Reserve-\n")
         for follower in data.party_reserve:
-            line = prepListLine(str(follower))
+            line = prepListLine(follower)
             f.write(f"{line}\n")
 
 def prepListLine(list):

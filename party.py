@@ -3,18 +3,13 @@ import random
 import data
 import followers
 from load_save_data import load, save
-import ship
-from util import enter, getBool, getValidChoice, printMenuFromList
-
+from util import enter, getBool, getValidChoice, isValidInt, printMenuFromList
 
 def partyMenu():
     print("\n--Party Management Menu--")
-    print("1. View Party")
-    print("2. Get Party Member")
-    print("3. Change Paety")
-    print("4. Lose Party Member")
-    print("0. Go Back")
-    choice = getValidChoice("Selection: ", 4)
+    menu_options = ["View Party", "Get Party Member", "Change Party", "Activate Party Member Ability", "Heal Party Member", "Lose Party Member"]
+    _, limit = printMenuFromList(menu_options)
+    choice = getValidChoice("Selection: ", limit)
     if choice == 1:
         printParty()
     elif choice == 2:
@@ -22,9 +17,14 @@ def partyMenu():
         if pb != None:
             getPartyMember(pb)
     elif choice == 3:
-        assignCrewmateSelect()
+        changePartySelect()
     elif choice == 4:
-        removePartyMemberSelect()
+        selectPartyMemberForAbility()
+    elif choice == 5:
+        member = selectPartyMember("to heal")
+        healPartyMemberValue(member)
+    elif choice == 6:
+        losePartyMemberSelect()
     elif choice == 0:
         return
     partyMenu()
@@ -80,7 +80,7 @@ def getPartyMember(isPM: bool):
         if checkRoomInParty(isPM):
             addToParty(isPM, len(data.party_reserve) - 1)
         else:
-            pIndex = selectPartyMemberIndex(isPM)
+            pIndex = selectPartyMemberIndexForSwap(isPM)
             if pIndex == -1:
                 return
             elif confirmSwapPartyMembers(isPM, pIndex, len(data.party_reserve) - 1):
@@ -90,50 +90,79 @@ def getPartyMember(isPM: bool):
                 enter()
                 return
 
-def selectPartyMemberIndex(isPM: bool):
+def selectPartyMemberIndexForSwap(isPM: bool):
     party = data.party if isPM else data.bugs
     offers, limit = printMenuFromList(party, None, followers.printOneFollower)
     choice = getValidChoice("Selection: ", limit)
     return choice - 1
 
+def selectPartyMember(text = ""):
+    party = [f for f in data.party]
+    party.extend(data.bugs)
+    if not party:
+        print("No party members or bugs to select.")
+        return None
+    print(f"\nSelect a party member or bug{' ' + text if text else ''}:")
+    _, limit = printMenuFromList(party, None, followers.printOneFollower)
+    choice = getValidChoice("Selection: ", limit)
+    if choice == 0:
+        return None
+    index = choice - 1
+    if index in range(0, len(data.party)):
+        return data.party[index]
+    else:
+        return data.bugs[index - len(data.party)]
+
 def checkRoomInParty(isPM: bool):
     return len(data.party) < data.party_limit if isPM else len(data.bugs) < data.bugs_limit
 
 def reservePartyMember(pm):
+    if "/" not in pm[4]:
+        split = pm[4].split(" ")
+        split[0] = split[0] + "/" + split[0]
+        pm[4] = " ".join(split)
     data.party_reserve.append(pm)
 
-def removePartyMemberSelect():
-    party = data.party
-    party.extend(data.bugs)
-    if not party:
-        print("No party members or bugs to remove.")
+def changePartySelect():
+    print()
+    options = ["To party from reserve", "To reserve from party"]
+    _, limit = printMenuFromList(options)
+    choice = getValidChoice("Selection: ", limit)
+    if choice == 0:
         return
-    print("\nSelect a party member or bug to remove:")
-    comp = ship.getComp(3, party)
-    if comp:
-        removeFromParty(comp)
+    elif choice == 1:
+        addToPartySelect()
+    elif choice == 2:
+        removePartyMemberSelect()
 
-def assignCrewmateSelect():
-    """Function to equip a new crewmate from the reserve."""
+def removePartyMemberSelect():
+    member = selectPartyMember("to remove")
+    removeFromParty(member)
+
+def addToPartySelect():
+    """Function to equip a party member from the reserve."""
     # Extract crewmates that are considered available for equipping
-    available_crewmates = [f for f in data.party_reserve]
-    if not available_crewmates:
-        print("No available crewmates to assign.")
+    available_members = [f for f in data.party_reserve]
+    if not available_members:
+        print("No available reserved party members or bugs.")
         return
-    print("\nSelect a crewmate to Assign:")
-    _, count = printMenuFromList(available_crewmates, None, followers.printOneFollower)
+        
+    print("\nSelect a party member to Assign:")
+    _, count = printMenuFromList(available_members, None, followers.printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return
-    comp = ship.getComp(3)
-    acrew = data.ship[comp][3]
-    if not comp:
-        return
-    elif acrew[0] == "None":
-        addToParty(comp, len(data.party_reserve) - 1)
+    index = choice - 1
+    member = available_members[index]
+    isPM = isPartyMember(member)
+    if checkRoomInParty(isPM):
+        addToParty(isPM, index)
     else:
-        if confirmSwapPartyMembers(comp, len(data.party_reserve) - 1):
-            swapPartyMembers(comp, len(data.party_reserve) - 1)
+        pIndex = selectPartyMemberIndexForSwap(isPM)
+        if pIndex == -1:
+            return
+        elif confirmSwapPartyMembers(isPM, pIndex, index):
+            swapPartyMembers(isPM, pIndex, index)
         else:
             print("\nDid not confirm. Leaving Party as is.")
             enter()
@@ -148,14 +177,16 @@ def addToParty(isPM: bool, index: int) -> None:
         data.party.append(member)
     else:
         data.bugs.append(member)
-    print(f"Added {member} to the party.")
+    print(f"Added {member[0]} to the party.")
 
-def removeFromParty(isPM: bool, index: int):
-    """Function to unassign a selected crewmate."""
-    crewmate = data.ship[3] # Remove from the equipped list in the specified compartment
-    reservePartyMember(crewmate)  # Add back to reserve
-    data.ship[3] = ["None"]
-    print(f"Unassigned {crewmate[0]}.")
+def removeFromParty(member: list):
+    """Function to unassign a selected party member."""
+    if isPartyMember(member):
+        data.party.pop(data.party.index(member))
+    else:
+        data.bugs.pop(data.bugs.index(member)) 
+    reservePartyMember(member)  # Add back to reserve
+    print(f"Removed {member[0]} from the party.")
 
 def confirmSwapPartyMembers(isPM: bool, pIndex: int, rIndex: int):
     pm = data.party[pIndex] if isPM else data.bugs[pIndex]
@@ -170,11 +201,15 @@ def swapPartyMembers(isPM: bool, pIndex: int, uIndex: int):
     removeFromParty(isPM, pIndex)
     addToParty(isPM, uIndex)
 
-def loseCrewmate(comp):
-    crewmate = data.ship[comp][3]
-    if crewmate[0] != "None":
-        print(f"Crewmate -{crewmate[0]}- has been lost.")
-        data.ship[comp][3] = ["None"]
+def losePartyMemberSelect():
+    losePartyMember(selectPartyMember("to lose"))
+
+def losePartyMember(member):
+    isPM = isPartyMember(member)
+    if isPM:
+        data.party.pop(data.party.index(member))
+    else:
+        data.bugs.pop(data.party.index(member))
 
 def drawCard():
     colors = ["Red", "Black"]
@@ -210,7 +245,7 @@ def followerAbilityActivates(card: dict, targetVal: int, targetSuit: str) -> boo
         else:
             return False
     else:
-        if card["suit"] in targetSuit and card["val"] >= targetVal:
+        if card["suit"] in targetSuit and card["val"] >= int(targetVal):
             return True
         return False
     
@@ -219,6 +254,70 @@ def followerTakesDamage(card: dict) -> bool:
         return True
     return False
     
+def selectPartyMemberForAbility():
+    member = selectPartyMember("to activate")
+    confirmUsePartyMemberAbility(member)
+
+def confirmUsePartyMemberAbility(member):
+    followers.printOneFollower(member)
+    if getBool("Would you like to attempt to activate an ability from this party member?"):
+        activatePartyMemberAbilities(member)
+
+def activatePartyMemberAbilities(member):
+    skill1 = member[2].split("/")
+    skill2 = "" if not member[3] else member[3].split("/")
+    card = drawCard()
+    name, suits, target = skill1
+    canUseSkill1 = followerAbilityActivates(card, target, suits)
+    canUseSkill2 = False
+    if skill2:
+        name, suits, target = skill2
+        canUseSkill2 = followerAbilityActivates(card, target, suits)
+    if canUseSkill1 or canUseSkill2:
+        print(f"{member[0]} can use an ability:")
+        if canUseSkill1:
+            print(f"{skill1[0]}{': ' + str(data.skills_dict[skill1[0]][0]) if skill1[0] in list(data.skills_dict.keys()) else ''}")
+        if canUseSkill2:
+            print(f"{skill2[0]}{': ' + str(data.skills_dict[skill2[0]][0]) if skill2[0] in list(data.skills_dict.keys()) else ''}")
+    else:
+        print(f"{member[0]} failed to use an ability.")
+    if followerTakesDamage(card):
+        damagePartyMember(member)
+    enter()
+
+def damagePartyMember(member):
+    condition = member[4].split("/")
+    condition[0] = str(int(condition[0]) - 1)
+    print(f"{member[0]} took a point of damage.")
+    member[4] = "/".join(condition)
+    if condition[0] == "0":
+        print(f"{member[0]} has died.")
+        losePartyMember(member)
+
+def healPartyMemberValue(member):
+    val = input(f"\nHow much to heal {member[0]}: ")
+    if not isValidInt(val):
+        return
+    val = int(val)
+    healPartyMember(member, val)
+
+def healPartyMember(member, val: int):
+    condition = member[4].split("/")
+    hp = condition[0]
+    max_hp = condition[1].split(" ")[0]
+    hp = str(min(int(hp) + val, int(max_hp)))
+    condition[0] = hp
+    print(f"{member[0]} healed. They now have {hp}/{max_hp} health.")
+    member[4] = "/".join(condition)
+
+def partyRest():
+    for member in data.party:
+        healPartyMember(member, 100)
+    for member in data.bugs:
+        healPartyMember(member, 100)
+    for member in data.party_reserve:
+        healPartyMember(member, 100)
+        
 if __name__ == "__main__":
     load()
     partyMenu()

@@ -4,6 +4,7 @@ import followers
 from hp import hpMenu
 from items import itemMenu, printItems
 from load_save_data import load, save
+import party
 from ship import printShip, shipMenu
 from util import enter, getBool, getValidChoice
 
@@ -148,6 +149,7 @@ def rest():
     # TODO: check abilities for per Rest and uncheck them
     
     # Leave on Rest Followers
+    party.partyRest()
     followers.loseAtRestFollowers()
             
 def virtueMenu():
