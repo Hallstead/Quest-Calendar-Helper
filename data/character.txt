@@ -36,9 +36,9 @@ Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d2
 1x Antidote
 
 -Equipment-
+Custom; Item; +7 Strength; +7 Dexterity; +7 Constitution; +7 Intellect; +7 Wisdom; +7 Charisma; +7 Health; +7 Attack; Defense; +0 Damage_Step; +7 Damage
 Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
 Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step
-Custom; Item; +7 Strength; +7 Dexterity; +7 Constitution; +7 Intellect; +7 Wisdom; +7 Charisma; +7 Health; +7 Attack; Defense; +0 Damage_Step; +7 Damage
 --Unequipped--
 Mysterious Canister; Item; +1 Strength; +1 Dexterity; +1 Constitution; +1 Intellect; +1 Wisdom; +1 Charisma; +7 Health
 Blossom Wand; Item; +1 Intellect; +1 Attack
