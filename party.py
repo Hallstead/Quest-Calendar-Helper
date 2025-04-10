@@ -45,6 +45,13 @@ def printParty():
         i += 1
     for x in range(i, data.bugs_limit + 1):
         print(f"Bug {x}: None")
+    
+    printReserve()
+
+def printReserve():
+    print("\n--Party Reserve--")
+    for p in data.party_reserve:
+        followers.printOneFollower(p)
 
 def isPartyMember(pm: list):
     if len(pm) < 4:
@@ -317,7 +324,7 @@ def partyRest():
         healPartyMember(member, 100)
     for member in data.party_reserve:
         healPartyMember(member, 100)
-        
+
 if __name__ == "__main__":
     load()
     partyMenu()

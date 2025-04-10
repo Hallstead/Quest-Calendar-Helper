@@ -1,9 +1,12 @@
 import data
 
 path = "data/"
+character = "Felix Factotum 2025.txt"
+
+# TODO: Cbaracter file selection.
 
 def load():
-    with open(path + "Felix Factotum 2025.txt", "r") as f:
+    with open(path + character, "r") as f:
         data.name = f.readline().strip()
         data.level = int(f.readline().split(":")[1].strip())
         data.virtue = int(f.readline().split(":")[1].strip())
@@ -202,7 +205,7 @@ def loadShipUpgradesFile():
             data.all_ship_upgrades[comp].append([upgrade.strip(), comp.strip(), bonus.strip()])
 
 def save():
-    with open(path + "Felix Factotum 2025.txt", "w") as f:
+    with open(path + character, "w") as f:
         f.write(f"{data.name}\n")
         f.write(f"Level: {data.level}\n")
         f.write(f"Virtue: {data.virtue}\n")

@@ -68,8 +68,7 @@ def printCharacterSheet():
     enter()
     followers.printFollowers()
     printShip()
-    # printParty()
-    # printFollowersReserve()
+    party.printParty()
 
 def boonMenu():
     print("\n--Boon Menu--")

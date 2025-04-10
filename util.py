@@ -1,4 +1,3 @@
-from data import years
 import data
 
 def getBool(prompt):
@@ -28,13 +27,14 @@ def isValidInt(val, limit = None):
     return True
 
 def getYear() -> str:
+    # TODO: check for preset year and only show things from the set year.
     year = input("What year (2021-2024): ")
-    if isValidInt(year) and int(year) in years:
+    if isValidInt(year) and int(year) in data.years:
         return year
     return 0
 
 def checkValidYear(year):
-    if not str(year).isnumeric() or int(year) not in years:
+    if not str(year).isnumeric() or int(year) not in data.years:
         print("Invalid year entered.")
         enter()
         return False
