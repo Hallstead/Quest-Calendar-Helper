@@ -1,7 +1,7 @@
 import data
 
 path = "data/"
-character = "Felix Factotum 2025.txt"
+character = "character.txt"
 
 # TODO: Cbaracter file selection.
 
