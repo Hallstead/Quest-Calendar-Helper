@@ -1,4 +1,4 @@
-# Quest-Calendar-Helper
+# Quest-Calendars-Helper
 This project is designed to be a companion for any year of Queat Calendars or multiple, if you wish.
 
 To begin, navigate in Command Prompt or terminal to folder with all the python files and run the command 
