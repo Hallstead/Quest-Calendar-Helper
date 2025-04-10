@@ -70,7 +70,7 @@ def printOneCompartmentFull(comp: list):
     print(f"{chp}/{max_chp} Integrity")
     print("   Upgrade: ", end="")
     printOneUpgrade(upgrade)
-    print("   Follower: ", end="")
+    print("   Crewmate: ", end="")
     followers.printOneFollower(crewmate)
 
 def printOneCompartmentShort(comp: list):

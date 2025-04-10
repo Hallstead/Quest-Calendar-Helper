@@ -1,6 +1,6 @@
 from data import inventory, item_dict
 from load_save_data import save
-from util import checkValidYear, enter, getValidChoice, getYear, isValidInt, printMenuFromList, years
+from util import checkValidYear, enter, getValidChoice, getYear, isValidInt, printMenuFromList
 
 def itemMenu():
     print("\n--Item Menu--")

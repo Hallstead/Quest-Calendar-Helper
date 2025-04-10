@@ -7,6 +7,7 @@ character = "Felix Factotum 2025.txt"
 
 def load():
     with open(path + character, "r") as f:
+        """Load all player data from the character save file into the data module."""
         data.name = f.readline().strip()
         data.level = int(f.readline().split(":")[1].strip())
         data.virtue = int(f.readline().split(":")[1].strip())
@@ -124,22 +125,25 @@ def load():
     loadShipUpgradesFile()
 
 def readline(f):
+    """Read and return the next non-empty, stripped line from the file or None if EOF."""
     while True:  # Keep reading until a non-blank line or EOF
         line = f.readline()
         if line == "":  # Detect EOF immediately
-            #print("***EOF***")
+            print("***EOF***")
             return None
         line = line.strip()  # Remove whitespace
         if line:  # If it's not empty after stripping, return it
             return line
 
 def parseListLine(line):
+    """Convert a semicolon-separated line into a list of stripped values."""
     l = line.split(";")
     for i in range(len(l)):
         l[i] = l[i].strip()
     return l
 
 def goodline(line):
+    """Return True if line is not None and doesn't start with a dash."""
     return line and not line.startswith("-")
 
 def loadItemsFile():
@@ -180,7 +184,6 @@ def loadFollowersFile():
             if l[0].strip() == "name":
                 continue
             year = l[1].strip()
-            # l.remove(year)
             if year not in data.all_followers:
                 data.all_followers[year] = []
             data.all_followers[year].append(l)
