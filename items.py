@@ -1,4 +1,4 @@
-from data import inventory, item_dict
+import data
 from load_save_data import save
 from util import checkValidYear, enter, getValidChoice, getYear, isValidInt, printMenuFromList
 
@@ -26,8 +26,8 @@ def gainItem(year):
         return
     item_list = []
     count = 0
-    for item in item_dict:
-        if str(year) in item_dict[item][1]:
+    for item in data.item_dict:
+        if str(year) in data.item_dict[item][1]:
             count += 1
             item_list.append(item)
             print(f"{count}. {item}")
@@ -43,50 +43,51 @@ def gainItem(year):
     val = int(val)
     if val == 0:
         return
-    if item in inventory:
-        inventory[item] += val
+    if item in data.inventory:
+        data.inventory[item] += val
     else:
-        inventory[item] = val
+        data.inventory[item] = val
     print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''} added to inventory.")
     save()
     enter()
 
 def useItem():
     avoid_item_list = ["Map & Compass", "Lockpicking Tools", "Sharpened Weapon", "Fortified Weapon", "Spellbook", "Mule", "Horse", "Seaquine", "Row Boat", "Magical Boat"]
-    item_list, count = printMenuFromList(inventory, avoid_item_list)
+    sortItems()
+    item_list, count = printMenuFromList(data.inventory, avoid_item_list)
     choice = getValidChoice("Which item to consume: ", count)
     if choice == 0:
         return
     item = item_list[choice-1]
-    val = input(f"How many {item}{'s' if item[-1] != 's' else ''} to consume (up to {inventory[item]}): ")
-    if not isValidInt(val, inventory[item]):
+    val = input(f"How many {item}{'s' if item[-1] != 's' else ''} to consume (up to {data.inventory[item]}): ")
+    if not isValidInt(val, data.inventory[item]):
         return
     val = int(val)
     if val == 0:
         return
-    inventory[item] -= 1
+    data.inventory[item] -= val
     print(f"Used ", end="")
-    if inventory[item] <= 0:
-        del inventory[item]
+    if data.inventory[item] <= 0:
+        del data.inventory[item]
         print(f"last {item}.", end="")
     else:
         print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''}.", end="")
+    print()
     save()
 
-def sortItems(items):
-    global inventory
+def sortItems():
     inv_dict = dict()
-    for item in item_dict:
-        if item in items:
-            inv_dict[item] = inventory[item]
-    inventory = inv_dict
+    for item in data.item_dict:
+        if item in data.inventory:
+            inv_dict[item] = data.inventory[item]
+    data.inventory = inv_dict
 
 
 def printItems():
-    sortItems(inventory)
+    sortItems()
     print("\n--Inventory--")
-    for i in inventory:
-        print(f"{inventory[i]}x {i}:\t", end="")
+    for i in data.inventory:
+        print(f"{data.inventory[i]}x {i}:\t", end="")
         if len(i) < 10:
             print("\t", end="")
-        print(f"{item_dict[i][0]}")
+        print(f"{data.item_dict[i][0]}")

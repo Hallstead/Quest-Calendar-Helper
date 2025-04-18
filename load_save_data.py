@@ -289,6 +289,7 @@ def save():
         for follower in data.party_reserve:
             line = prepListLine(follower)
             f.write(f"{line}\n")
+        f.write("\n-End-")
 
 def prepListLine(list):
     if list == "None":
