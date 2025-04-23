@@ -2,20 +2,20 @@ Felix Factotum
 Level: 2
 Virtue: 1
 Str: 0
-Dex: 3
+Dex: 4
 Con: -4
 Int: 7
 Wis: -2
 Cha: 0
-HP: 18
+HP: 17
 Max HP: 21
-Def: 2
-Atk: 7
+Def: 3
+Atk: 8
 Dmg: 5(2d8)+0
-Gold: 60
-Credits: 13
+Gold: 75
+Credits: 22
 Amber: 60
-Boon: 1
+Boon: 0
 
 -Abilities-
 Investigator: +2 on checks to search for things.
@@ -27,8 +27,9 @@ Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
 Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d20 roll that does not include Intellect.
 
 -Inventory-
-2x Health Potion (1d4)
-2x Meal Rations
+3x Health Potion (1d4)
+3x Meal Rations
+6x Ship Parts
 1x Antidote
 3x Combat Tonic (S)
 1x Solar Grenade
@@ -38,6 +39,8 @@ Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d2
 
 -Equipment-
 Blossom Wand; Item; +1 Intellect; +1 Attack
+Necklace of Luck; Necklace; +1 Dexterity; +1 Attack
+Shield of Valor; Shield; +1 Armor; Can sell for 25 gold
 Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
 Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step
 --Unequipped--
@@ -74,5 +77,8 @@ Bug 4: None
 Bug 5: None
 
 -Party Reserve-
+
+-Notes-
+2 Tournament Points
 
 -End-

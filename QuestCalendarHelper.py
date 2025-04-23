@@ -4,6 +4,7 @@ import followers
 from hp import hpMenu
 from items import itemMenu, printItems
 from load_save_data import load, save
+from notes import notes_menu
 import party
 from ship import printShip, shipMenu
 from util import enter, getBool, getValidChoice
@@ -216,7 +217,8 @@ def menu():
         print("9. Ship")
         print("10. Rest")
         print("11. Virtue")
-        print("12. Save")
+        print("12, Notes")
+        print("13. Save")
         print("0. Close")
         choice = getValidChoice("Selection: ", 12)
         if choice == 1: # View Character Sheet
@@ -241,7 +243,9 @@ def menu():
             restMenu()
         elif choice == 11: # Virtue
             virtueMenu()
-        elif choice == 12: # Save
+        elif choice == 12: # Virtue
+            notes_menu()
+        elif choice == 13: # Save
             save()
         elif choice == 0: # Close
             break

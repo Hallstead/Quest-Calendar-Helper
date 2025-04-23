@@ -117,6 +117,12 @@ def load():
             l = parseListLine(line)
             data.party_reserve.append(l)
             line = readline(f)
+        
+        
+        line = readline(f) #step past -Notes-
+        while goodline(line):
+            data.notes.append(line)
+            line = readline(f)
 
     loadItemsFile()
     loadEquipmentFile()
@@ -289,6 +295,9 @@ def save():
         for follower in data.party_reserve:
             line = prepListLine(follower)
             f.write(f"{line}\n")
+        f.write("\n-Notes-\n")
+        for note in data.notes:
+            f.write(f"{note}\n")
         f.write("\n-End-")
 
 def prepListLine(list):
