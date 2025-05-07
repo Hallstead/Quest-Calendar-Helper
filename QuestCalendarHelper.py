@@ -7,7 +7,7 @@ from load_save_data import load, save
 from notes import notes_menu
 import party
 from ship import printShip, shipMenu
-from util import enter, getBool, getValidChoice
+from util import enter, getBool, getValidChoice, printMenuFromList
 
 def printAbilities():
     print("\n--Abilities--")
@@ -206,21 +206,9 @@ def modifyVirtue(val):
 def menu():
     while(True):
         print("\n--Main Menu--")
-        print("1. View Character Sheet")
-        print("2. Modify HP")
-        print("3. Items")
-        print("4. Abilities")
-        print("5. Money")
-        print("6. Boon")
-        print("7. Equipment")
-        print("8. Followers")
-        print("9. Ship")
-        print("10. Rest")
-        print("11. Virtue")
-        print("12, Notes")
-        print("13. Save")
-        print("0. Close")
-        choice = getValidChoice("Selection: ", 12)
+        options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment", "Followers", "Ship", "Rest", "Virtue", "Notes", "Save"]
+        _, limit = printMenuFromList(options, None, None, "Close")
+        choice = getValidChoice("Selection: ", limit)
         if choice == 1: # View Character Sheet
             printCharacterSheet()
         elif choice == 2: # Modify HP
@@ -249,6 +237,7 @@ def menu():
             save()
         elif choice == 0: # Close
             break
+        save()
 
 if __name__ == "__main__":
     load()

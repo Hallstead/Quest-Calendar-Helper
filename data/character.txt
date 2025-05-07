@@ -1,6 +1,6 @@
 Felix Factotum
 Level: 2
-Virtue: 1
+Virtue: 2
 Str: 0
 Dex: 4
 Con: -4
@@ -12,10 +12,10 @@ Max HP: 21
 Def: 3
 Atk: 8
 Dmg: 5(2d8)+0
-Gold: 75
-Credits: 22
-Amber: 60
-Boon: 0
+Gold: 95
+Credits: 38
+Amber: 70
+Boon: 1
 
 -Abilities-
 Investigator: +2 on checks to search for things.
@@ -28,7 +28,7 @@ Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d2
 
 -Inventory-
 3x Health Potion (1d4)
-3x Meal Rations
+1x Meal Rations
 6x Ship Parts
 1x Antidote
 3x Combat Tonic (S)
@@ -79,6 +79,6 @@ Bug 5: None
 -Party Reserve-
 
 -Notes-
-2 Tournament Points
+5 Tournament Points
 
 -End-

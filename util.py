@@ -40,7 +40,7 @@ def checkValidYear(year):
         return False
     return True
 
-def printMenuFromList(mainList: list, checkList: list = None, printOne = None):
+def printMenuFromList(mainList: list, checkList: list = None, printOne = None, lastOption = None):
     offers = []
     count = 0
     for item in mainList:
@@ -53,7 +53,7 @@ def printMenuFromList(mainList: list, checkList: list = None, printOne = None):
         else:
             print(item)
         offers.append(item)
-    print("0. Go Back")
+    print("0. " + ("Go Back" if not lastOption else lastOption))
     return offers, count
 
 def modifyAttr(a, val):
