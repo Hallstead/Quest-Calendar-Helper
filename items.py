@@ -1,14 +1,13 @@
+import random
 import data
 from load_save_data import save
 from util import checkValidYear, enter, getValidChoice, getYear, isValidInt, printMenuFromList
 
 def itemMenu():
     print("\n--Item Menu--")
-    print("1. List Inventory")
-    print("2. Gain Item")
-    print("3. Use Item")
-    print("0. Go Back")
-    choice = getValidChoice("Selection: ", 3)
+    options = ["List Inventory", "Gain Item", "Use Item", "Find Backpack Item"]
+    _, limit = printMenuFromList(options)
+    choice = getValidChoice("Selection: ", limit)
     if choice != 0:
         print()
     if choice == 1:
@@ -17,6 +16,8 @@ def itemMenu():
         gainItem(getYear())
     elif choice == 3:
         useItem()
+    elif choice == 4:
+        find_backpack_item()
     elif choice == 0:
         return
     itemMenu()
@@ -40,7 +41,13 @@ def gainItem(year):
     if not isValidInt(val):
         print("That is not a number")
         return
-    val = int(val)
+    if val == "0":
+        return
+    add_item(item, int(val))
+    save()
+    enter()
+
+def add_item(item: str, val: int):
     if val == 0:
         return
     if item in data.inventory:
@@ -48,8 +55,6 @@ def gainItem(year):
     else:
         data.inventory[item] = val
     print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''} added to inventory.")
-    save()
-    enter()
 
 def useItem():
     avoid_item_list = ["Map & Compass", "Lockpicking Tools", "Sharpened Weapon", "Fortified Weapon", "Spellbook", "Mule", "Horse", "Seaquine", "Row Boat", "Magical Boat"]
@@ -82,7 +87,6 @@ def sortItems():
             inv_dict[item] = data.inventory[item]
     data.inventory = inv_dict
 
-
 def printItems():
     sortItems()
     print("\n--Inventory--")
@@ -91,3 +95,8 @@ def printItems():
         if len(i) <= 10:
             print("\t", end="")
         print(f"{data.item_dict[i][0]}")
+
+def find_backpack_item():
+    item = random.choice(["Meal Ration", "Dragon's Fire (S)", "Combat Tonic (S)", "Warding Ointment", "Brawnberry", 
+                          "Nimblecap", "Stoutseed", "Foresight Flower", "Sageleaf", "Galmour Stone"])
+    add_item(item, 1)
