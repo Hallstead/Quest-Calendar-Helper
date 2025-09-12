@@ -1,6 +1,7 @@
 import crewmates
 import data
 from load_save_data import load, save
+import party
 from util import checkValidYear, getBool, getValidChoice, getYear, printMenuFromList
 
 def followersMenu():
@@ -16,7 +17,7 @@ def followersMenu():
         crewmates.crewmateMenu()
     elif year == 2024:
         # party members
-        pass
+        party.partyMenu()
         
 def followersMenu2021(year):
     if not checkValidYear(year):

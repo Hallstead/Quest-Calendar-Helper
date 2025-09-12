@@ -1,34 +1,36 @@
 Felix Factotum
-Level: 2
+Level: 3
 Virtue: 2
 Str: 0
 Dex: 4
 Con: -4
-Int: 7
-Wis: -2
+Int: 8
+Wis: -1
 Cha: 0
-HP: 17
-Max HP: 21
+HP: 23
+Max HP: 23
 Def: 3
-Atk: 8
-Dmg: 5(2d8)+0
-Gold: 95
-Credits: 38
+Atk: 10
+Dmg: 7(2d12)+0
+Gold: 105
+Credits: 54
 Amber: 70
 Boon: 1
 
 -Abilities-
 Investigator: +2 on checks to search for things.
+Danger Sense: +2 on checks to avoid traps and suprise hazards.
 Reroll: Once per page; reroll a die and take the new result.
 Lucky: When you roll a 1 on a d20 roll; reroll the die and take the new result.
-Inspiration 2: You have two Inspiration Points to power your abilities.
+Inspiration 3: You have two Inspiration Points to power your abilities.
 Combat Surge: Use one Inspiration Point. Add 1d4 to a single Attack or Damage roll.
+Combat Reroll: Use one Inspiration Point. Reroll a single Attack or Damage roll.
 Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
 Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d20 roll that does not include Intellect.
 
 -Inventory-
 3x Health Potion (1d4)
-1x Meal Rations
+10x Meal Rations
 6x Ship Parts
 1x Antidote
 3x Combat Tonic (S)
@@ -79,6 +81,8 @@ Bug 5: None
 -Party Reserve-
 
 -Notes-
+Now on March 17th
 5 Tournament Points
+Saved Pilot
 
 -End-

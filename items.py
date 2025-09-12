@@ -88,6 +88,6 @@ def printItems():
     print("\n--Inventory--")
     for i in data.inventory:
         print(f"{data.inventory[i]}x {i}:\t", end="")
-        if len(i) < 10:
+        if len(i) <= 10:
             print("\t", end="")
         print(f"{data.item_dict[i][0]}")

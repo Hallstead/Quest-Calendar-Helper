@@ -103,4 +103,4 @@ Combat Mits, 2024, Gloves, +1 Attack, +1 Damage
 Bashing Shield, 2024, Shield, +1 Attack, +1 Defense
 Potent Necklace, 2024, Necklace, +2 Attack
 Seed of Life, 2026, Item, +1 Attack, +1 Damage, +1 Defense, +X Health
-Custom, 2025, Weapom, +X Strength, +X Dexterity, +X Constitution, +X Intellect, +X Wisdom, +X Charisma, +X Health, +X Attack, +X Defense, +X Damage_Step, +X Damage
+Custom, 2025, Weapon, +X Strength, +X Dexterity, +X Constitution, +X Intellect, +X Wisdom, +X Charisma, +X Health, +X Attack, +X Defense, +X Damage_Step, +X Damage
