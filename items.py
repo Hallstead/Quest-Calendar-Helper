@@ -3,7 +3,10 @@ import data
 from load_save_data import save
 from util import checkValidYear, enter, getValidChoice, getYear, isValidInt, printMenuFromList
 
+special_items = ["Map & Compass", "Lockpicking Tools", "Sharpened Weapon", "Fortified Weapon", "Horse", "Mule", "Seaquine", "Row Boat", "Magical Boat", "Spellbook"]
+
 def itemMenu():
+    printItems()
     print("\n--Item Menu--")
     options = ["List Inventory", "Gain Item", "Use Item", "Find Backpack Item"]
     _, limit = printMenuFromList(options)
@@ -11,7 +14,8 @@ def itemMenu():
     if choice != 0:
         print()
     if choice == 1:
-        printItems()
+        # printItems()
+        pass
     elif choice == 2:
         gainItem(getYear())
     elif choice == 3:
@@ -55,9 +59,15 @@ def add_item(item: str, val: int):
     else:
         data.inventory[item] = val
     print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''} added to inventory.")
+    if item == "Fortified Weapon":
+        data.attack += 1
+        print("Attack increased by 1.")
+    if item == "Sharpened Weapon":
+        data.damage += 1
+        print("Damage increased by 1.")
 
 def useItem():
-    avoid_item_list = ["Map & Compass", "Lockpicking Tools", "Sharpened Weapon", "Fortified Weapon", "Spellbook", "Mule", "Horse", "Seaquine", "Row Boat", "Magical Boat"]
+    avoid_item_list = special_items
     sortItems()
     item_list, count = printMenuFromList(data.inventory, avoid_item_list)
     choice = getValidChoice("Which item to consume: ", count)

@@ -8,6 +8,7 @@ from load_save_data import load, save
 from util import enter, getBool, getValidChoice, getYear, isValidInt, modifyAttr, printMenuFromList
 
 def shipMenu():
+    printShip()
     print("\n--Ship Management Menu--")
     print("1. View Ship")
     print("2. Damage/Repair Compartment")
@@ -17,8 +18,8 @@ def shipMenu():
     choice = getValidChoice("Selection: ", 4)
     if choice == 1:
         # view ship compartments
-        printShip()
-        enter()
+        # printShip()
+        pass
     elif choice == 2:
         # damage/repair a compartment
         compHPMenu()

@@ -1,27 +1,28 @@
 Felix Factotum
-Level: 3
-Virtue: 2
+Level: 4
+Virtue: 6
 Str: 0
 Dex: 4
 Con: -4
-Int: 8
-Wis: -1
+Int: 9
+Wis: 4
 Cha: 0
-HP: 23
-Max HP: 23
-Def: 3
-Atk: 10
-Dmg: 7(2d12)+0
-Gold: 105
-Credits: 54
-Amber: 70
+HP: 22
+Max HP: 25
+Def: 1
+Atk: 17
+Dmg: 9(3d10)+1
+Gold: 90
+Credits: 129
+Amber: 111
 Boon: 1
 
 -Abilities-
 Investigator: +2 on checks to search for things.
 Danger Sense: +2 on checks to avoid traps and suprise hazards.
-Reroll: Once per page; reroll a die and take the new result.
 Lucky: When you roll a 1 on a d20 roll; reroll the die and take the new result.
+Reroll: Twice per page; reroll any die roll and take the new result.
+Reduce Defence, Gain Attack: Once per Page; reduce you Defense by -2 and add +2 to all Attack rolls for the Page. (Always in effect)
 Inspiration 3: You have two Inspiration Points to power your abilities.
 Combat Surge: Use one Inspiration Point. Add 1d4 to a single Attack or Damage roll.
 Combat Reroll: Use one Inspiration Point. Reroll a single Attack or Damage roll.
@@ -29,25 +30,37 @@ Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
 Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d20 roll that does not include Intellect.
 
 -Inventory-
-3x Health Potion (1d4)
+2x Health Potion (1d4)
 10x Meal Rations
 6x Ship Parts
 1x Antidote
-3x Combat Tonic (S)
+4x Combat Tonic (S)
 1x Solar Grenade
 3x Warding Ointment
+1x Brawnberry
 1x Nimblecap
 1x Foresight Flower
+1x Map & Compass
+1x Lockpicking Tools
+1x Sharpened Weapon
+1x Fortified Weapon
+1x Horse
 
 -Equipment-
+Thorn Bracers; Bracers; +1 Wisdom; +1 Attack
+Cloak of Feathers; Cloak; +1 Wisdom; +1 Attack
 Blossom Wand; Item; +1 Intellect; +1 Attack
+World Watcher's Staff; Key Item; Can be used in combat to Banish an enemy to its home realm. May contain other secrets. Can't be sold or sacrificed upon death.
 Necklace of Luck; Necklace; +1 Dexterity; +1 Attack
+Ring of Mind; Ring; +1 Intellect; +1 Wisdom; Can sell for 30 gold
 Shield of Valor; Shield; +1 Armor; Can sell for 25 gold
 Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
 Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step
 --Unequipped--
+Wand of Pain; Item; Use once per Rest. Use in combat to add a d10 to a Damage roll. Ignores all armor to hit automatically.; Can sell for 35 gold
 
 -Followers-
+Minstrel; 2021; Persuasive; Animal Tamer; If your Health ever reaches zero, the Minstrel leaves.
 
 -Ship Stats-
 Aim: 15
@@ -81,8 +94,13 @@ Bug 5: None
 -Party Reserve-
 
 -Notes-
-Now on March 17th
+Now on June 9th
 5 Tournament Points
 Saved Pilot
+World Watcher's Staff: +0
+Saved 2 people
+God's Blessing: You may reroll a single die roll. Take the new result, then lose this blessing.
+4 Bushels of Tassleroot
+Spring Source
 
 -End-

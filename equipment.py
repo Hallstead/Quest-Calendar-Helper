@@ -3,6 +3,7 @@ from load_save_data import save
 from util import checkValidYear, enter, getBool, getValidChoice, getYear, isValidInt, modifyAttr, printMenuFromList
 
 def equipmentMenu():
+    printEquipment()
     print("\n--Equipment Menu--")
     print("1. View Equipment")
     print("2. Get Equipment")
@@ -11,7 +12,8 @@ def equipmentMenu():
     print("0. Go Back")
     choice = getValidChoice("Selection: ", 4)
     if choice == 1:
-        printEquipment()
+        # printEquipment()
+        pass
     elif choice == 2:
         getSlot(getYear())
     elif choice == 3:

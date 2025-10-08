@@ -2,6 +2,7 @@ import data
 from util import getBool, getValidChoice, printMenuFromList
 
 def notes_menu():
+    print_notes()
     print()
     options = ["View notes", "Add note", "Modify note", "Delete note"]
     _, limit = printMenuFromList(options)
@@ -9,7 +10,8 @@ def notes_menu():
     if choice == 0:
         return
     elif choice == 1:
-        print_notes()
+        # print_notes()
+        pass
     elif choice == 2:
         print("What note to add (or 0 to go back):")
         note = input("> ")
@@ -40,8 +42,19 @@ def modify_note():
     index = select_note("modify")
     if index == -1:
         return
-    print("\nCurrent:", data.notes[index])
-    note = input("New: ")
+
+    current_note = data.notes[index]
+    print("\nCurrent:", current_note)
+
+    try:
+        # Try prompt_toolkit (cross-platform, allows editing prefilled text)
+        from prompt_toolkit import prompt
+        note = prompt("New: ", default=current_note)
+
+    except ImportError:
+        # Fallback to normal input
+        note = input("New: ")
+
     data.notes[index] = note
     print("The note has been updated.")
     return
