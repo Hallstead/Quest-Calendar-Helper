@@ -60,11 +60,11 @@ def add_item(item: str, val: int):
         data.inventory[item] = val
     print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''} added to inventory.")
     if item == "Fortified Weapon":
-        data.attack += 1
-        print("Attack increased by 1.")
+        data.attack += val
+        print(f"Attack increased by {val}.")
     if item == "Sharpened Weapon":
-        data.damage += 1
-        print("Damage increased by 1.")
+        data.damage += val
+        print(f"Damage increased by {val}.")
 
 def useItem():
     avoid_item_list = special_items

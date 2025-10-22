@@ -22,7 +22,7 @@ def load():
         data.defense = int(f.readline().split(":")[1].strip())
         data.attack = int(f.readline().split(":")[1].strip())
         dmg_line = f.readline().strip()
-        data.damage_step = int(dmg_line.split(":")[1].strip()[0])
+        data.damage_step = int(dmg_line.split(":")[1].strip().split("(")[0])
         data.damage = int(dmg_line.split(":")[1].strip()[-1])
         data.gold = int(f.readline().split(":")[1].strip())
         data.credits = int(f.readline().split(":")[1].strip())

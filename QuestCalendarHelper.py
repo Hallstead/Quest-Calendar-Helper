@@ -33,7 +33,7 @@ def printTraits():
 
 def printStats():
     print("\nHP\tAttack\tDefense\tDamage")
-    print(f"{data.hp}/{data.max_hp}\t+{data.attack}\t+{data.defense}\t{data.damage_chart[data.damage_step]}{' + ' + str(data.damage) if data.damage else ''}")
+    print(f"{data.hp}/{data.max_hp}\t+{data.attack}\t{'+ ' if data.defense > 0 else ''}{data.defense}\t{data.damage_chart[data.damage_step]}{' + ' + str(data.damage) if data.damage else ''}")
 
 def printMoney():
     total = data.gold + data.credits + data.amber
