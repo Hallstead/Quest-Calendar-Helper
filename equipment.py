@@ -53,14 +53,22 @@ def getSlot(year):
         return
     slot_list = []
     for slot in data.all_equipment[year]:
-        slot_list.append(slot)
+        equipped = False
+        for e in data.equipment:
+            if slot in e and slot != "Key Item":
+                equipped = True
+                break
+        if equipped:
+            slot_list.append(slot + " (Equipped)")
+        else:
+            slot_list.append(slot)
     slot_list.sort()
     _, count = printMenuFromList(slot_list)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:
         return
     else:
-        getEquipment(data.all_equipment[year][slot_list[choice-1]])
+        getEquipment(data.all_equipment[year][slot_list[choice-1].split(" (")[0]])
       
 def getEquipment(gear_list):
     print()

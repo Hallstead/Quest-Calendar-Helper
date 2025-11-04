@@ -1,20 +1,20 @@
 Felix Factotum
 Level: 5
-Virtue: 6
+Virtue: 7
 Str: 2
 Dex: 5
-Con: -4
+Con: -3
 Int: 10
 Wis: 3
 Cha: 2
-HP: 21
+HP: 28
 Max HP: 28
 Def: -4
-Atk: 22
+Atk: 23
 Dmg: 11(2d10+2d8)+6
-Gold: 30
-Credits: 96
-Amber: 108
+Gold: 89
+Credits: 128
+Amber: 117
 Boon: 1
 
 -Abilities-
@@ -32,11 +32,11 @@ Combat Reroll: Use one Inspiration Point. Reroll a single Attack or Damage roll.
 
 -Inventory-
 3x Health Potion (1d4)
-11x Meal Rations
+13x Meal Rations
 1x Honey
 4x Ship Parts
 1x Antidote
-4x Combat Tonic (S)
+5x Combat Tonic (S)
 1x Solar Grenade
 3x Warding Ointment
 2x Brawnberry
@@ -46,7 +46,6 @@ Combat Reroll: Use one Inspiration Point. Reroll a single Attack or Damage roll.
 1x Lockpicking Tools
 3x Sharpened Weapon
 3x Fortified Weapon
-1x Horse
 
 -Equipment-
 Thorn Bracers; Bracers; +1 Wisdom; +1 Attack
@@ -56,17 +55,21 @@ Helm of the Deep; Helmet; +1 Charisma; +1 Defense
 Blossom Wand; Item; +1 Intellect; +1 Attack
 World Watcher's Staff; Key Item; Can be used in combat to Banish an enemy to its home realm. May contain other secrets. Can't be sold or sacrificed upon death.
 Necklace of Luck; Necklace; +1 Dexterity; +1 Attack
+Plasma Pack; Pack; +1 Constitution; +1 Attack
 Ring of Mind; Ring; +1 Intellect; +1 Wisdom; Can sell for 30 gold
 Shield of Valor; Shield; +1 Armor; Can sell for 25 gold
 Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
 Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step
 --Unequipped--
 Cloak of Feathers; Cloak; +1 Wisdom; +1 Attack
+Cryo Mitts; Gloves; +1 Defense; +1 Damage
 Wand of Pain; Item; Use once per Rest. Use in combat to add a d10 to a Damage roll. Ignores all armor to hit automatically.; Can sell for 35 gold
+Collar of Creation; Necklace; +5 Health; Can sell for 35 gold
 
 -Followers-
 Minstrel; 2021; Persuasive; Animal Tamer; If your Health ever reaches zero, the Minstrel leaves.
 Arificer; 2021; Student; Gadget; If you ever take a Rest without using the Artificer's Gadget Ability, the Artificer leaves.
+Sentry; 2022; Investigator; Intimidating; Upkeep: 10 gold
 
 -Ship Stats-
 Aim: 25
@@ -101,15 +104,18 @@ Bug 5: None
 -Party Reserve-
 
 -Notes-
-Now on August 4th
+Now on October 6th
 5 Tournament Points
 Saved Pilot
-World Watcher's Staff: +0
+World Watcher's Staff: +3
 Saved 2 people
 God's Blessing: You may reroll a single die roll. Take the new result, then lose this blessing.
 9 Bushels of Tassleroot
 Spring Source
 Hawk Key
 Calming Emotion: Add +4 to any single d20 roll. (Useable once)
+Focus on Wraithex
+The Horse is pulling the cart. It cannot provide help while travelling.
+Golden Key
 
 -End-
