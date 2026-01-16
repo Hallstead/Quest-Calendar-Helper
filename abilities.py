@@ -56,4 +56,3 @@ def printAbilities():
                 skill, suits, val = skill2.split("/")
                 print(f"{skill} ({suits} >= {val}){': ' + data.skills_dict[skill][0] if skill in data.skills_dict else ''}")
             
-    enter()

@@ -1,8 +1,10 @@
 name = ""
 yearSet = False
-year = -1
+year = 0
 level = 1
 virtue = 0
+notoriety = 0
+minions = 0
 strength = 0
 dexterity = 0
 constitution = 0

@@ -1,0 +1,132 @@
+Felix Factotum
+Year: 0
+Level: 6
+Virtue: 9
+Notoriety: 0
+Minions: 0
+Str: 3
+Dex: 5
+Con: -3
+Int: 10
+Wis: 3
+Cha: 3
+HP: 34
+Max HP: 34
+Def: -4
+Atk: 25
+Dmg: 11(2d10+2d8)+10
+Gold: 125
+Credits: 183
+Amber: 172
+Boon: 1
+
+-Abilities-
+Investigator: +2 on checks to search for things.
+Danger Sense: +2 on checks to avoid traps and suprise hazards.
+Lucky: When you roll a 1 on a d20 roll; reroll the die and take the new result.
+Reroll: Twice per page; reroll any die roll and take the new result.
+Reduce Defense, Gain Attack: Twice per Page; reduce your Defense by -2 and add +2 to all Attack rolls for the Page. (Always in effect)
+Reduce Defense, Gain Damage: Thrice per Page; reduce your Defense by -2 and add +2 to all Damage rolls for the Page. (Always in effect)
+Heal on Kill: Whenever you kill an enemy, regain 1 Health Point, up to your Max HP.
+Inspiration 4: You have four Inspiration Points to power your abilities.
+Cunning Insight: Use two Inspiration Points. Add your Intellect modifier to a d20 roll that does not include Intellect.
+Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
+Combat Surge: Use one Inspiration Point. Add 1d4 to a single Attack or Damage roll.
+Combat Reroll: Use one Inspiration Point. Reroll a single Attack or Damage roll.
+
+-Inventory-
+3x Health Potion (1d4)
+1x Health Potion (2d4)
+17x Meal Rations
+1x Honey
+4x Ship Parts
+1x Antidote
+5x Combat Tonic (S)
+1x Solar Grenade
+3x Warding Ointment
+2x Brawnberry
+2x Nimblecap
+1x Foresight Flower
+1x Map & Compass
+1x Lockpicking Tools
+3x Sharpened Weapon
+3x Fortified Weapon
+
+-Equipment-
+Arc Boots; Boots; +2 Attack
+Thorn Bracers; Bracers; +1 Wisdom; +1 Attack
+Cloak of Thieves; Cloak; +1 Dexterity; +1 Charisma; Can sell for 35 gold
+Gloves of Mist; Gloves; +1 Intellect; +1 Damage
+Helm of the Deep; Helmet; +1 Charisma; +1 Defense
+Blossom Wand; Item; +1 Intellect; +1 Attack
+World Watcher's Staff; Key Item; Can be used in combat to Banish an enemy to its home realm. May contain other secrets. Can't be sold or sacrificed upon death.
+Necklace of Luck; Necklace; +1 Dexterity; +1 Attack
+Plasma Pack; Pack; +1 Constitution; +1 Attack
+Ring of Mind; Ring; +1 Intellect; +1 Wisdom; Can sell for 30 gold
+Shield of Valor; Shield; +1 Armor; Can sell for 25 gold
+Spinal Amplifier; Upgrade; +1 Dexterity; +1 Attack
+Plasma Sword; Weapon; +1 Attack; +2 Defense; +1 Damage_Step; +0 Damage
+--Unequipped--
+Boots of the Dead; Boots; +1 Health; +1 Attack
+Cloak of Feathers; Cloak; +1 Wisdom; +1 Attack
+Cryo Mitts; Gloves; +1 Defense; +1 Damage
+Wand of Pain; Item; Use once per Rest. Use in combat to add a d10 to a Damage roll. Ignores all armor to hit automatically.; Can sell for 35 gold
+Creeping Vine Staff; Item; +2 Health; +1 Damage
+Collar of Creation; Necklace; +5 Health; Can sell for 35 gold
+
+-Followers-
+Minstrel; 2021; Persuasive; Animal Tamer; If your Health ever reaches zero, the Minstrel leaves.
+Arificer; 2021; Student; Gadget; If you ever take a Rest without using the Artificer's Gadget Ability, the Artificer leaves.
+
+-Ship Stats-
+Aim: 25
+Evasion: 10
+Shield: 2
+
+-Ship Compartments-
+Engine Room: 3/3/None/None
+Bridge: 3/3/Sensors; Bridge; +5 Aim/None
+Labs: 3/3/None/None
+Weapons: 3/3/Cannons; Weapons; +10 Aim/None
+Crew Quarters: 3/3/None/None
+Cargo: 3/3/Teleporter; Cargo; +1 Shield/None
+
+--Upgrades Reserve--
+Deflectors; Weapons; +1 Shield
+
+--Crewmate Reserve--
+
+-Party-
+Slot 1: Tech Mage; 2024; Investigator/SC/1; +3 Damage/C/6; 5/5 Health
+Slot 2: Whisperfoot; 2024; Locksmith/DH/1; +3 Defense/D/6; 5/5 Health
+Slot 3: None
+Slot 4: None
+Slot 5: None
+Bug 1: None
+Bug 2: None
+Bug 3: None
+Bug 4: None
+Bug 5: None
+
+-Party Reserve-
+
+-Notes-
+Now on December 27th
+5 Tournament Points
+Saved Pilot
+World Watcher's Staff: +4
+Saved 2 people
+God's Blessing: You may reroll a single die roll. Take the new result, then lose this blessing.
+9 Bushels of Tassleroot
+Spring Source
+Hawk Key
+Calming Emotion: Add +4 to any single d20 roll. (Useable once)
+Focus on Wraithex
+Golden Key
+Dispersed Cloud
+Communication
+Mercy for Master Laurel
+Onyx Key
+Cover
+
+-End-

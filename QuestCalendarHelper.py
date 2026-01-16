@@ -37,16 +37,25 @@ def printStats():
 
 def printMoney():
     total = data.gold + data.credits + data.amber
-    print("\nTotal Currency:", total)
-    print("  Gold:", data.gold)
-    print("  Credits:", data.credits)
-    print("  Amber:", data.amber)
+    if not data.year:
+        print("\nTotal Currency:", total)
+    if not data.year or data.year in [2021, 2022, 2026]:
+        print("  Gold:", data.gold)
+    if not data.year or data.year in [2023]:
+        print("  Credits:", data.credits)
+    if not data.year or data.year in [2024]:
+        print("  Amber:", data.amber)
 
 def printCharacterSheet():
     print()
     print(data.name)
     print("Level:", data.level)
-    print("Virtue:", data.virtue)
+    if not data.year or data.year in [2021, 2022, 2024, 2024]:
+        print("Virtue:", data.virtue)
+    if not data.year or data.year == 2026:
+        print("Notoriety:", data.notoriety)
+        print("Minions:", data.minions)
+    
     printTraits()
     printStats()
     printMoney()
@@ -54,9 +63,13 @@ def printCharacterSheet():
     printAbilities()
     printItems()
     printEquipment()
-    followers.printFollowers()
-    printShip()
-    party.printParty()
+
+    if not data.year or data.year in [2021, 2022]:
+        followers.printFollowers()
+    if not data.year or data.year in [2023]:
+        printShip()
+    if not data.year or data.year in [2024, 2026]:
+        party.printParty()
     enter()
 
 def boonMenu():
@@ -169,7 +182,12 @@ def menu():
         printTraits()
         printStats()
         print("\n--Main Menu--")
-        options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment", "Followers", "Ship", "Rest", "Virtue", "Notes", "Save"]
+        options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment"]
+        if data.year in [2021, 2022]:
+            options.append("Followers")
+        if data.year in [2023]:
+            options.append("Ship")
+        options += ["Rest", "Virtue", "Notes", "Save"]
         _, limit = printMenuFromList(options, None, None, "Close")
         choice = getValidChoice("Selection: ", limit)
         if choice == 1: # View Character Sheet
@@ -180,6 +198,7 @@ def menu():
             itemMenu()
         elif choice == 4: # Abilities
             printAbilities()
+            enter()
         elif choice == 5: # Money
             moneyMenu()
         elif choice == 6: # Boon

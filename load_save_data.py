@@ -9,8 +9,13 @@ def load():
     with open(path + character, "r") as f:
         """Load all player data from the character save file into the data module."""
         data.name = f.readline().strip()
+        data.year = int(f.readline().split(":")[1].strip())
         data.level = int(f.readline().split(":")[1].strip())
-        data.virtue = int(f.readline().split(":")[1].strip())
+        if not data.year or data.year in [2021, 2022, 2023, 2024]:
+            data.virtue = int(f.readline().split(":")[1].strip())
+        if not data.year or data.year == 2026:
+            data.notoriety = int(f.readline().split(":")[1].strip())
+            data.minions = int(f.readline().split(":")[1].strip())
         data.strength = int(f.readline().split(":")[1].strip())
         data.dexterity = int(f.readline().split(":")[1].strip())
         data.constitution = int(f.readline().split(":")[1].strip())
@@ -23,10 +28,13 @@ def load():
         data.attack = int(f.readline().split(":")[1].strip())
         dmg_line = f.readline().strip()
         data.damage_step = int(dmg_line.split(":")[1].strip().split("(")[0])
-        data.damage = int(dmg_line.split(":")[1].strip()[-1])
-        data.gold = int(f.readline().split(":")[1].strip())
-        data.credits = int(f.readline().split(":")[1].strip())
-        data.amber = int(f.readline().split(":")[1].strip())
+        data.damage = int(dmg_line.split(":")[1].strip().split("+")[-1])
+        if not data.year or data.year in [2021, 2022, 2026]:
+            data.gold = int(f.readline().split(":")[1].strip())
+        if not data.year or data.year in [2023]:
+            data.credits = int(f.readline().split(":")[1].strip())
+        if not data.year or data.year in [2024]:
+            data.amber = int(f.readline().split(":")[1].strip())
         data.boon = int(f.readline().split(":")[1].strip())
 
         line = readline(f) # clear blank lines and
@@ -58,65 +66,68 @@ def load():
             data.unequipped.append(l)
             line = readline(f)
         
-        line = readline(f) #step past "-Followers-"
-        while goodline(line):
-            l = parseListLine(line)
-            data.followers.append(l)
-            line = readline(f)
-            
-        line = readline(f) #step past -Ship Stats-
-        while goodline(line):
-            attr, val = line.split(":")
-            setattr(data, attr.strip().lower(), int(val.strip()))
-            line = readline(f)
+        if not data.year or data.year in [2021, 2022]:
+            line = readline(f) #step past "-Followers-"
+            while goodline(line):
+                l = parseListLine(line)
+                data.followers.append(l)
+                line = readline(f)
+        
+        if not data.year or data.year == 2023:
+            line = readline(f) #step past -Ship Stats-
+            while goodline(line):
+                attr, val = line.split(":")
+                setattr(data, attr.strip().lower(), int(val.strip()))
+                line = readline(f)
 
-        line = readline(f) #step past -Ship Compartments-
-        while goodline(line):
-            compartment, l = line.split(":")
-            chp, max_chp, upgrade, crewmate = l.strip().split("/")
-            upgrade = parseListLine(upgrade)
-            crewmate = parseListLine(crewmate)
-            data.ship[compartment] = [int(chp.strip()), int(max_chp.strip()), upgrade, crewmate]
-            line = readline(f)
+            line = readline(f) #step past -Ship Compartments-
+            while goodline(line):
+                compartment, l = line.split(":")
+                chp, max_chp, upgrade, crewmate = l.strip().split("/")
+                upgrade = parseListLine(upgrade)
+                crewmate = parseListLine(crewmate)
+                data.ship[compartment] = [int(chp.strip()), int(max_chp.strip()), upgrade, crewmate]
+                line = readline(f)
 
-        line = readline(f) #step past --Upgrades Reserve--
-        while goodline(line):
-            l = parseListLine(line)
-            data.unequipped_ship_upgrades.append(l)
-            line = readline(f)
+            line = readline(f) #step past --Upgrades Reserve--
+            while goodline(line):
+                l = parseListLine(line)
+                data.unequipped_ship_upgrades.append(l)
+                line = readline(f)
            
-        line = readline(f) #step past --Crewmates Reserve--
-        while goodline(line):
-            l = parseListLine(line)
-            data.crew_reserve.append(l)
-            line = readline(f)
+            line = readline(f) #step past --Crewmates Reserve--
+            while goodline(line):
+                l = parseListLine(line)
+                data.crew_reserve.append(l)
+                line = readline(f)
 
-        pm_count = 0
-        b_count = 0
-        line = readline(f) #step past -Party-
-        while goodline(line):
-            slot, member = line.split(":")
-            if slot.lower().startswith("slot"):
-                pm_count += 1
-            elif slot.lower().startswith("bug"):
-                b_count += 1
-            member = member.strip()
-            if member != "None":
-                member = parseListLine(member)
-                if member[3]:
-                    data.party.append(member)
-                else:
-                    data.bugs.append(member)
-            line = readline(f)
+        if not data.year or data.year in [2024, 2026]:
+            pm_count = 0
+            b_count = 0
+            line = readline(f) #step past -Party-
+            while goodline(line):
+                slot, member = line.split(":")
+                if slot.lower().startswith("slot"):
+                    pm_count += 1
+                elif slot.lower().startswith("bug"):
+                    b_count += 1
+                member = member.strip()
+                if member != "None":
+                    member = parseListLine(member)
+                    if member[3]:
+                        data.party.append(member)
+                    else:
+                        data.bugs.append(member)
+                line = readline(f)
 
-        data.party_limit = max(5, pm_count)
-        data.bugs_limit = max(5, b_count)
+            data.party_limit = max(5, pm_count)
+            data.bugs_limit = max(5, b_count)
 
-        line = readline(f) #step past -Party Reserve-
-        while goodline(line):
-            l = parseListLine(line)
-            data.party_reserve.append(l)
-            line = readline(f)
+            line = readline(f) #step past -Party Reserve-
+            while goodline(line):
+                l = parseListLine(line)
+                data.party_reserve.append(l)
+                line = readline(f)
         
         
         line = readline(f) #step past -Notes-
@@ -184,7 +195,6 @@ def loadEquipmentFile():
 
 def loadFollowersFile():
     with open(path + "followers.csv", "r") as f:
-        key = ""
         for line in f:
             l = line.strip().split(";")
             if l[0].strip() == "name":
@@ -216,8 +226,13 @@ def loadShipUpgradesFile():
 def save():
     with open(path + character, "w") as f:
         f.write(f"{data.name}\n")
+        f.write(f"Year: {data.year}\n")
         f.write(f"Level: {data.level}\n")
-        f.write(f"Virtue: {data.virtue}\n")
+        if not data.year or data.year in [2021, 2022, 2023, 2024]:
+            f.write(f"Virtue: {data.virtue}\n")
+        if not data.year or data.year in [2026]:
+            f.write(f"Notoriety: {data.notoriety}\n")
+            f.write(f"Minions: {data.minions}\n")
         f.write(f"Str: {data.strength}\n")
         f.write(f"Dex: {data.dexterity}\n")
         f.write(f"Con: {data.constitution}\n")
@@ -229,9 +244,12 @@ def save():
         f.write(f"Def: {data.defense}\n")
         f.write(f"Atk: {data.attack}\n")
         f.write(f"Dmg: {data.damage_step}({data.damage_chart[data.damage_step]})+{data.damage}\n")
-        f.write(f"Gold: {data.gold}\n")
-        f.write(f"Credits: {data.credits}\n")
-        f.write(f"Amber: {data.amber}\n")
+        if not data.year or data.year in [2021, 2022, 2026]:
+            f.write(f"Gold: {data.gold}\n")
+        if not data.year or data.year in [2023]:
+            f.write(f"Credits: {data.credits}\n")
+        if not data.year or data.year in [2024]:
+            f.write(f"Amber: {data.amber}\n")
         f.write(f"Boon: {data.boon}\n")
         f.write("\n")
         f.write("-Abilities-\n")
@@ -250,51 +268,55 @@ def save():
             line = prepListLine(u)
             f.write(f"{line}\n")
         f.write("\n")
-        f.write("-Followers-\n")
-        for follower in data.followers:
-            line = prepListLine(follower)
-            f.write(f"{line}\n")
-        f.write("\n")
-        f.write("-Ship Stats-\n")
-        f.write(f"Aim: {data.aim}\n")
-        f.write(f"Evasion: {data.evasion}\n")
-        f.write(f"Shield: {data.shield}\n")
-        f.write("\n-Ship Compartments-\n")
-        for compartment in data.ship:
-            chp = data.ship[compartment][0]
-            max_chp = data.ship[compartment][1]
-            upgrade = data.ship[compartment][2]
-            upgrade = prepListLine(upgrade)
-            crewmate = data.ship[compartment][3]
-            crewmate = prepListLine(crewmate)
-            f.write(f"{compartment}: {chp}/{max_chp}/{upgrade}/{crewmate}\n")
-        f.write("\n--Upgrades Reserve--\n")
-        for u in data.unequipped_ship_upgrades:
-            line = prepListLine(u)
-            f.write(f"{line}\n")
-        f.write("\n--Crewmate Reserve--\n")
-        for u in data.crew_reserve:
-            line = prepListLine(u)
-            f.write(f"{line}\n")
-        f.write("\n-Party-\n")
-        i = 1
-        for member in data.party:
-            m = prepListLine(member)
-            f.write(f"Slot {i}: {m}\n")
-            i += 1
-        for x in range(i, data.party_limit + 1):
-            f.write(f"Slot {x}: None\n")
-        i = 1
-        for bug in data.bugs:
-            b = prepListLine(bug)
-            f.write(f"Bug {i}: {b}\n")
-            i += 1
-        for x in range(i, data.bugs_limit + 1):
-            f.write(f"Bug {x}: None\n")
-        f.write("\n-Party Reserve-\n")
-        for follower in data.party_reserve:
-            line = prepListLine(follower)
-            f.write(f"{line}\n")
+        if not data.year or data.year in [2021, 2022]:
+            f.write("-Followers-\n")
+            for follower in data.followers:
+                line = prepListLine(follower)
+                f.write(f"{line}\n")
+            f.write("\n")
+        if not data.year or data.year in [2023]:
+            f.write("-Ship Stats-\n")
+            f.write(f"Aim: {data.aim}\n")
+            f.write(f"Evasion: {data.evasion}\n")
+            f.write(f"Shield: {data.shield}\n")
+            f.write("\n-Ship Compartments-\n")
+            for compartment in data.ship:
+                chp = data.ship[compartment][0]
+                max_chp = data.ship[compartment][1]
+                upgrade = data.ship[compartment][2]
+                upgrade = prepListLine(upgrade)
+                crewmate = data.ship[compartment][3]
+                crewmate = prepListLine(crewmate)
+                f.write(f"{compartment}: {chp}/{max_chp}/{upgrade}/{crewmate}\n")
+            f.write("\n--Upgrades Reserve--\n")
+            for u in data.unequipped_ship_upgrades:
+                line = prepListLine(u)
+                f.write(f"{line}\n")
+            f.write("\n--Crewmate Reserve--\n")
+            for u in data.crew_reserve:
+                line = prepListLine(u)
+                f.write(f"{line}\n")
+                f.write("\n")
+        if not data.year or data.year in [2024, 2026]:
+            f.write("-Party-\n")
+            i = 1
+            for member in data.party:
+                m = prepListLine(member)
+                f.write(f"Slot {i}: {m}\n")
+                i += 1
+            for x in range(i, data.party_limit + 1):
+                f.write(f"Slot {x}: None\n")
+            i = 1
+            for bug in data.bugs:
+                b = prepListLine(bug)
+                f.write(f"Bug {i}: {b}\n")
+                i += 1
+            for x in range(i, data.bugs_limit + 1):
+                f.write(f"Bug {x}: None\n")
+            f.write("\n-Party Reserve-\n")
+            for follower in data.party_reserve:
+                line = prepListLine(follower)
+                f.write(f"{line}\n")
         f.write("\n-Notes-\n")
         for note in data.notes:
             f.write(f"{note}\n")

@@ -87,6 +87,12 @@ def useItem():
         print(f"last {item}.", end="")
     else:
         print(f"{val} {item}{'s' if item[-1] != 's' and val > 1 else ''}.", end="")
+    if item == "Fortified Weapon":
+        data.attack -= val
+        print(f"Attack decreased by {val}.")
+    if item == "Sharpened Weapon":
+        data.damage -= val
+        print(f"Damage decreased by {val}.")
     print()
     save()
 
