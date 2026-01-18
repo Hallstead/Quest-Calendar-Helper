@@ -6,7 +6,9 @@ from util import checkValidYear, getBool, getValidChoice, getYear, printMenuFrom
 
 def followersMenu():
     # TODO: Allow for predetermined year
-    year = getYear()
+    year = data.year
+    if not year:
+        year = getYear()
     year = int(year)
     if not checkValidYear(year):
         return
@@ -15,7 +17,7 @@ def followersMenu():
     elif year == 2023:
         # crewmates
         crewmates.crewmateMenu()
-    elif year == 2024:
+    elif year in [2024, 2026]:
         # party members
         party.partyMenu()
         

@@ -17,7 +17,10 @@ def itemMenu():
         # printItems()
         pass
     elif choice == 2:
-        gainItem(getYear())
+        year = data.year
+        if not year:
+            year = getYear()
+        gainItem(year)
     elif choice == 3:
         useItem()
     elif choice == 4:
@@ -113,6 +116,20 @@ def printItems():
         print(f"{data.item_dict[i][0]}")
 
 def find_backpack_item():
-    item = random.choice(["Meal Ration", "Dragon's Fire (S)", "Combat Tonic (S)", "Warding Ointment", "Brawnberry", 
-                          "Nimblecap", "Stoutseed", "Foresight Flower", "Sageleaf", "Galmour Stone"])
+    item_list = []
+    year = data.year
+    if not year:
+        year = getYear()
+    if not checkValidYear(year):
+        return
+    if year == 2024:
+        item_list = ["Meal Ration", "Dragon's Fire (S)", "Combat Tonic (S)", "Warding Ointment", "Brawnberry", 
+                     "Nimblecap", "Stoutseed", "Foresight Flower", "Sageleaf", "Galmour Stone"]
+    elif year == 2026:
+        item_list = ["NightShade", "Cryptweed", "Blightroot", "Wolfsbane", "Bonedust", "Moonmoss"]
+    else:
+        print("No backpack items available for that year.")
+        enter()
+        return
+    item = random.choice(item_list)
     add_item(item, 1)

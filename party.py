@@ -40,12 +40,12 @@ def printParty():
         print(f"Slot {x}: None")
     i = 1
     for b in data.bugs:
-        print(f"Bug {i}: ", end="")
+        print(f"{'Bug' if data.year == 2024 else 'Pet'} {i}: ", end="")
         followers.printOneFollower(b)
         i += 1
     for x in range(i, data.bugs_limit + 1):
-        print(f"Bug {x}: None")
-    
+        print(f"{'Bug' if data.year == 2024 else 'Pet'} {x}: None")
+
     printReserve()
 
 def printReserve():

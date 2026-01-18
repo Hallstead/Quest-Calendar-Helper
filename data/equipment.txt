@@ -104,3 +104,35 @@ Bashing Shield, 2024, Shield, +1 Attack, +1 Defense
 Potent Necklace, 2024, Necklace, +2 Attack
 Seed of Life, 2026, Item, +1 Attack, +1 Damage, +1 Defense, +X Health
 Custom, 2025, Weapon, +X Strength, +X Dexterity, +X Constitution, +X Intellect, +X Wisdom, +X Charisma, +X Health, +X Attack, +X Defense, +X Damage_Step, +X Damage
+
+Warden's Death Shield, 2026, Shield, +1 Constitution, +1 Defense
+Cinch of the Forgotten Oath, 2026, Belt, +1 Constitution, +2 Max_HP
+Tome of Forbidden Rites, 2026, Item, +1 Constitution, +1 Attack
+Helm of Abyssal Echos, 2026, Helmet, +1 Intellect, +1 Defense
+Sword of Sorrow, 2026, Weapon, +1 Intellect, +1 Damage
+Pendant of the Fiend, 2026, Necklace, +1 Intellect, +1 Attack
+Plate of the Mountain, 2026, Armor, +1 Charisma, +1 Defense
+Band of Barren Woes, 2026, Ring, +1 Charisma, +2 Max_HP
+Cloak of Molten Fire, 2026, Cloak, +1 Charisma, +1 Attack
+Crown of Chaos, 2026, Helmet, +1 Strength, +1 Defense
+Gloves of Gripping, 2026, Gloves, +1 Strength, +1 Damage
+Wand of Woe, 2026, Item, +1 Strength, +1 Max_HP
+Skulldrinker, 2026, Weapon, +1 Wisdom, +1 Damage
+The Deathclasp, 2026, Belt, +1 Wisdom, +1 Max_HP
+Relic of the Betrayer, 2026, Necklace, +1 Wisdom, +1 Attack
+Plate of the Blood Reaver, 2026, Armor, +1 Dexterity, +1 Defense
+Eye of Vhyras, 2026, Ring, +1 Dexterity, +1 Max_HP
+Veil of the Whithered One, 2026, Cloak, +1 Dexterity, +1 Attack
+Aegis of the Fallen Light, 2026, Shield, +2 Defense
+Grasp of the Revenant, 2026, Gloves, +1 Damage, +1 Defense
+Girdle of Crimson Oath, 2026, Belt, +1 Max_HP, +1 Defense
+Crown of the Silent King, 2026, Helmet, +1 damage, +1 Defense
+Frostbite Reaver, 2026, Weapon, +2 Damage
+Shroud of Cold Shadows, 2026, Cloak, +1 Damage, +1 Attack
+Twilight Carapace, 2026, Armor, +2 Max_HP, +1 Defense
+Ring of the Living Script, 2026, Ring, +4 Max_HP
+The Infernal Codex, 2026, Item, +1 Max_HP, +1 Defense
+Shield of the Horned Prophet, 2026, Shield, +1 Attack, +1 Defense
+The Ocular Gauntlet, 2026, Gloves, +1 Attack, +1 Damage
+Amulet of the Dawnspark, 2026, Necklace, +2 Attack
+Soul Crystal Fragment, 2027, Item, +1 Attack, +1 Damage, +1 Defense, +X Max_HP

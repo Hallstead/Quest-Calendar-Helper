@@ -15,7 +15,10 @@ def equipmentMenu():
         # printEquipment()
         pass
     elif choice == 2:
-        getSlot(getYear())
+        year = data.year
+        if not year:
+            year = getYear()
+        getSlot(year)
     elif choice == 3:
         changeEquipment()
     elif choice == 4:
@@ -51,6 +54,7 @@ def getSlot(year):
     if int(year) == 2021:
         getEquipment(data.all_equipment[str(year)]["all"])
         return
+    year = str(year)
     slot_list = []
     for slot in data.all_equipment[year]:
         equipped = False
@@ -169,7 +173,7 @@ def equip(index):
         if "+" in item[i]:
             val = int(item[i].strip("+")[0])
             trait = item[i].split(" ")[1].lower()
-            if trait == "health":
+            if trait == "health" or trait == "max_hp":
                 modifyAttr("hp", val)
                 modifyAttr("max_hp", val)
             elif trait == "armor":

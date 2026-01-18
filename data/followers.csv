@@ -72,7 +72,7 @@ Warrior Bee;2024;+d4 Strength/SC/7;;2 Health
 Fur Moth;2024;+2 Wisdom/D/3;;3 Health
 Pill Bug;2024;+2 Intellect/DH/5;;3 Health
 Lady Bug;2024;+d4 Charisma/SC/7;;3 Health
-Inch Worm;2024;+2 Dex/SC/6;;3 Health
+Inch Worm;2024;+2 Dexterity/SC/6;;3 Health
 Green Beetle;2024;+d4 Constitution/DH/4;;3 Health
 Fur Beetle;2024;+d4 Wisdom/DH/6;;4 Health
 Seskel;2024;+d6 Intellect/SC/4;;2 Health
@@ -80,3 +80,12 @@ Roly Poly;2024;+d6 Charisma/SC/5;;4 Health
 Quick Beetle;2024;+d4 Dexterity/DH/3;;4 Health
 Hard Snail;2024;+d6 Constitution/DH/4;;4 Health
 ;;;;
+Party;;;;
+Velvetfang;2026;Gain a Minion;;4 Energy
+Grimcackle;2026;+4 Minions;;
+Noodlebeard;2026;Dungeon Map;;2 Energy
+Voltarion;2026;Negate Nat 1;;4 Energy
+Stabitha;2026;Produce Gold;;4 Energy
+Warbelly;2026;Change Equipment;;2 Energy
+Stonebellow;2026;;;4 Energy
+Pets;;;;

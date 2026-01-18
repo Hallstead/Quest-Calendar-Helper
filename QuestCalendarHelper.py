@@ -37,14 +37,17 @@ def printStats():
 
 def printMoney():
     total = data.gold + data.credits + data.amber
+    print()
     if not data.year:
-        print("\nTotal Currency:", total)
+        print("Total Currency:", total)
     if not data.year or data.year in [2021, 2022, 2026]:
-        print("  Gold:", data.gold)
+        print(f"{'  ' if not data.year else ''}Gold:", data.gold)
     if not data.year or data.year in [2023]:
-        print("  Credits:", data.credits)
+        print(f"{'  ' if not data.year else ''}Credits:", data.credits)
     if not data.year or data.year in [2024]:
-        print("  Amber:", data.amber)
+        print(f"{'  ' if not data.year else ''}Amber:", data.amber)
+    if not data.year:
+        print()
 
 def printCharacterSheet():
     print()
@@ -52,14 +55,15 @@ def printCharacterSheet():
     print("Level:", data.level)
     if not data.year or data.year in [2021, 2022, 2024, 2024]:
         print("Virtue:", data.virtue)
-    if not data.year or data.year == 2026:
-        print("Notoriety:", data.notoriety)
-        print("Minions:", data.minions)
     
     printTraits()
     printStats()
+    print()
+    if not data.year or data.year == 2026:
+        print("Notoriety:", data.notoriety)
+        print("Minions:", data.minions)
     printMoney()
-    print("\nBoon:", data.boon)
+    print("Boon:", data.boon)
     printAbilities()
     printItems()
     printEquipment()
@@ -94,21 +98,29 @@ def moneyMenu():
     printMoney()
     print("\n--Money Menu--")
     print("1. View Currency")
-    print("2. Gold")
-    print("3. Credits")
-    print("4. Amber")
+    if not data.year or data.year in [2021, 2022, 2026]:
+        print("2. Gold")
+    if not data.year or data.year in [2023]:
+        print("3. Credits")
+    if not data.year or data.year in [2024]:
+        print("4. Amber")
     print("0. Go Back")
     choice = getValidChoice("Selection: ", 4)
     if choice == 1:
         # printMoney()
         pass
-    elif choice == 2:
+    elif choice == 2 and (not data.year or data.year in [2021, 2022, 2026]):
         currency = "Gold"
-    elif choice == 3:
+    elif choice == 3 and (not data.year or data.year in [2023]):
         currency = "Credits"
-    elif choice == 4:
+    elif choice == 4 and (not data.year or data.year in [2024]):
         currency = "Amber"
     elif choice == 0:
+        return
+    else:
+        print("That is not a valid choice this year.")
+        enter()
+        moneyMenu()
         return
     if choice != 1:
         addMoney(currency)
@@ -183,42 +195,21 @@ def menu():
         printStats()
         print("\n--Main Menu--")
         options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment"]
+        actions = [printCharacterSheet, hpMenu, itemMenu, printAbilities, moneyMenu, boonMenu, equipmentMenu]
         if data.year in [2021, 2022]:
             options.append("Followers")
+            actions.append(followers.followersMenu)
         if data.year in [2023]:
             options.append("Ship")
+            actions.append(shipMenu)
         options += ["Rest", "Virtue", "Notes", "Save"]
+        actions += [restMenu, virtueMenu, notes_menu, save]
         _, limit = printMenuFromList(options, None, None, "Close")
         choice = getValidChoice("Selection: ", limit)
-        if choice == 1: # View Character Sheet
-            printCharacterSheet()
-        elif choice == 2: # Modify HP
-            hpMenu()
-        elif choice == 3: # Items
-            itemMenu()
-        elif choice == 4: # Abilities
-            printAbilities()
-            enter()
-        elif choice == 5: # Money
-            moneyMenu()
-        elif choice == 6: # Boon
-            boonMenu()
-        elif choice == 7: # Equipment
-            equipmentMenu()
-        elif choice == 8: # Followers
-            followers.followersMenu()
-        elif choice == 9: # Ship
-            shipMenu()
-        elif choice == 10: # Rest
-            restMenu()
-        elif choice == 11: # Virtue
-            virtueMenu()
-        elif choice == 12: # Virtue
-            notes_menu()
-        elif choice == 13: # Save
-            save()
-        elif choice == 0: # Close
+        if choice == 0: # Close
             break
+        else:
+            actions[choice - 1]()
         save()
 
 if __name__ == "__main__":

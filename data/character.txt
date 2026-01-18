@@ -9,11 +9,11 @@ Con: -4
 Int: 4
 Wis: 0
 Cha: 0
-HP: 14
-Max HP: 14
-Def: 0
-Atk: 2
-Dmg: 2(1d10)+0
+HP: 21
+Max HP: 21
+Def: 1
+Atk: 3
+Dmg: 2(1d10)+1
 Gold: 0
 Boon: 0
 
@@ -26,6 +26,7 @@ Cunning Knowledge: Use one Inspiration Point. Add 1d4 to a single trait roll.
 -Inventory-
 
 -Equipment-
+Seed of Life; Item; +1 Attack; +1 Damage; +1 Defense; +7 Health
 --Unequipped--
 
 -Party-
