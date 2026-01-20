@@ -81,11 +81,53 @@ Quick Beetle;2024;+d4 Dexterity/DH/3;;4 Health
 Hard Snail;2024;+d6 Constitution/DH/4;;4 Health
 ;;;;
 Party;;;;
-Velvetfang;2026;Gain a Minion;;4 Energy
-Grimcackle;2026;+4 Minions;;
-Noodlebeard;2026;Dungeon Map;;2 Energy
-Voltarion;2026;Negate Nat 1;;4 Energy
-Stabitha;2026;Produce Gold;;4 Energy
-Warbelly;2026;Change Equipment;;2 Energy
-Stonebellow;2026;;;4 Energy
+Velvetfang;2026;Spend 1 Energy: When you defeat an enemy in combat, roll a D6. On a 6, receive a minion.;;4 Energy
+Grimcackle;2026;You may retain up to a max of +4 additional Minions.;;
+Noodlebeard;2026;Spend 1 Energy: You may reveal and read the entire map or dungeon page before choosing which path or area to travel.;;2 Energy
+Voltarion;2026;Spend 1 Energy: Rolling a 1 doesn't automatically mean failure. You may add any applicable bonuses.;;4 Energy
+Stabitha;2026;Spend 1 Energy: Produce 1 gold.;;4 Energy
+Warbelly;2026;Spend 1 Energy: You may switch out and change your equipment without taking a Rest.;;2 Energy
+Stonebellow;2026;Holds a single equipment slot of any type. Follows same rules for switching.;;4 Energy
+Emberlyn;2026;Whenever an enemy dies, roll a D6. On a 5-6, Spend 1 Energy: gain a meal ration.;;7 Energy
+Sludgefang;2026;Spend 1 Energy: Produce 1 ,eal ration.;;2 Energy
+Widowshade;2026;Spend 1 Energy: You can acquire and save a second Boon.;;1 Energy
+Skitterscourge;2026;Spend 1 Energy: Reduce your Dotoriety by -2 to reroll any d20 roll.;;3 Energy
+Rattleblade;2026;Spend 1 Energy: On death, you may reroll the die and take the new result if you choose.;;4 Energy
+Cutlass Jack;2026;Spend 1 Energy: Gain 1 additional gold when you pickpocket.;;5 Energy
+Roarburn;2026;Spend 1 Energy: Remove the Curse condition.;;2 Energy
+Venomina;2026;Spend 1 Energy: Remove the Poison condition.;;2 Energy
+Stump;2026;"Spend 1 Energy: Reduce damage taken in combat by 1; this Henchman can only be healed during a Rest.";;6 Energy
+Grump;2026;"Spend 1 Energy: Reduce damage taken outside of combat by 1; this Henchman can only be healed during a Rest.";;4 Energy
+Hackmaw;2026;Spend 1 Energy: Counterattack: If an enemy misses you in combat, immediatly make another Attack and Damage roll against them.;;
+Scales & Tails;2026;Spend 1 Energy: When you loot from the backpack icon, you may decide to reroll and take the new item instead.;;7 Energy
+Clobberhoof;2026;Spend 1 Energy: In a dungeon map you may move to any area free from restrictions of the path.;;4 Energy
+Snarlgrim;2026;Spend 1 Energy: If your Attack misses twice in a row, you automatically hit on the next attack for the page.;;3 Energy
+Skarlash;2026;Spend 1 Energy: Sacrifice 1 minion to restore 1 health. You may not do this during combat.;;3 Energy
+Brainburner;2026;Spend 1 Energy: You may read one page ahead to glimpse what awaits you.;;4 Energy
+;;;;
 Pets;;;;
+Gazeweaver;2026;+1 Danger Sense;+1 Student;2 Energy
+Skulldrake;2026;+1 Stealthy;+1 Survivalist;2 Energy
+Snaggleclaw;2026;+1 Persuasive;+1 Animal Tamer;2 Energy
+Watchhopper;2026;+1 Locksmith Sense;+2 Student;2 Energy
+Nibblerot;2026;+2 Survivalist;+1 Athlete;2 Energy
+Winkbat;2026;+1 Arcane Adept;+1 Investigator;2 Energy
+Pegasus;2026;+1 Persuasive;+2 Animal Tamer;3 Energy
+Nightmare;2026;+2 Athlete;+1 Intimidating;3 Energy
+Red Dragon Egg;2026;None;;1 Energy
+Green Dragon Egg;2026;None;;1 Energy
+Toxiccoil;2026;+3 Animal Tamer;+2 Intimidating;2 Energy
+Scorvile;2026;+3 Danger Sense;+3 Survivalist;2 Energy
+Blistertoad;2026;+3 Survivalist;+3 Student;2 Energy
+Red Dragon Hatchling;2026;+1 Arcane Adept;+2 Persuasive;3 Energy
+Gren Dragon Hatchling;2026;+2 Arcane Adept;+1 Persuasive;3 Energy
+Wyvern;2026;+3 Intimidating;+3 Persuasive;4 Energy
+Red Dragon Youngling;2026;+2 Arcane Adept;+3 Persuasive;4 Energy
+Green Dragon Youngling;2026;+3 Arcane Adept;+2 Persuasive;4 Energy
+Chompus;2026;+2 Locksmith;+2 Stealthy;4 Energy
+Emberwing;2026;+3 Arcane Adept;+3 Athlete;3 Energy
+Hexpurr;2026;+3 Animal Tamer;+3 Student;3 Energy
+Thornlash;2026;+3 Locksmith;+3 Stealthy;4 Energy
+Oculoth;2026;+2 Investigator;+3 Stealthy;4 Energy
+Cerebrawl;2026;+3 Athlete;+3 Investigator;3 Energy
+;;;;

@@ -194,11 +194,8 @@ def menu():
         printTraits()
         printStats()
         print("\n--Main Menu--")
-        options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment"]
-        actions = [printCharacterSheet, hpMenu, itemMenu, printAbilities, moneyMenu, boonMenu, equipmentMenu]
-        if data.year in [2021, 2022]:
-            options.append("Followers")
-            actions.append(followers.followersMenu)
+        options = ["View Character Sheet", "Modify HP", "Items", "Abilities", "Money", "Boon", "Equipment", "Followers"]
+        actions = [printCharacterSheet, hpMenu, itemMenu, printAbilities, moneyMenu, boonMenu, equipmentMenu, followers.followersMenu]
         if data.year in [2023]:
             options.append("Ship")
             actions.append(shipMenu)

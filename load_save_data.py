@@ -199,6 +199,7 @@ def loadFollowersFile():
             l = line.strip().split(";")
             if l[0].strip() == "name":
                 continue
+            print(l)
             year = l[1].strip()
             if year not in data.all_followers:
                 data.all_followers[year] = []

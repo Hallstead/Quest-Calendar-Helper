@@ -49,9 +49,10 @@ def printParty():
     printReserve()
 
 def printReserve():
-    print("\n--Party Reserve--")
-    for p in data.party_reserve:
-        followers.printOneFollower(p)
+    if len(data.party_reserve) != 0:
+        print("\n--Party Reserve--")
+        for p in data.party_reserve:
+            followers.printOneFollower(p)
 
 def isPartyMember(pm: list):
     if len(pm) < 4:
@@ -61,7 +62,7 @@ def isPartyMember(pm: list):
     return False
 
 def getPartyBugsSelect():
-    menu_options = ["Party Member", "Bug"]
+    menu_options = ["Party Member", f"{'Bug' if data.year == 2024 else 'Pet' if data.year == 2026 else 'Bug/Pet'}"]
     _, limit = printMenuFromList(menu_options)
     choice = getValidChoice("Selection: ", limit)
     if choice == 0:
@@ -72,11 +73,13 @@ def getPartyBugsSelect():
         return False
 
 def getPartyMember(isPM: bool):
-    """Function to get a new crewmate based on available crewmates."""
+    """Function to get a new party member based on available party members."""
+    if data.year == 2026:
+        isPM = not isPM
     print()
     owned = {member[0] for member in data.party}
     owned.update({member[0] for member in data.party_reserve})
-    offers = [member for member in data.all_followers["2024"] if isPartyMember(member) == isPM]
+    offers = [member for member in data.all_followers[str(data.year)] if isPartyMember(member) == isPM]
     offers, count = printMenuFromList(offers, owned, followers.printOneFollower)
     choice = getValidChoice("Selection: ", count)
     if choice == 0:

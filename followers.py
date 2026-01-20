@@ -5,7 +5,6 @@ import party
 from util import checkValidYear, getBool, getValidChoice, getYear, printMenuFromList
 
 def followersMenu():
-    # TODO: Allow for predetermined year
     year = data.year
     if not year:
         year = getYear()
@@ -81,6 +80,14 @@ def printOneFollower(f):
         if skill2:
             skill, suits, val = skill2.split("/")
             print(f"      {skill}: {suits} >= {val}")
+        if condition:
+            print(f"      {condition}")
+    elif year == "2026":
+        if not skill2:
+            print(f"      {skill1}")
+        else:
+            print(f"      Spend 1 Energy: {skill1}")
+            print(f"      Spend 1 Energy: {skill2}")
         if condition:
             print(f"      {condition}")
     else:
