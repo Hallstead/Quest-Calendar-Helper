@@ -1,0 +1,789 @@
+{
+    "SystemData": {
+        "LastSaveVersion": "1.1.1",
+        "CharacterList": null,
+        "NotificationsAllowed_PlayReminder": null,
+        "NotificationsAllowed_General": null,
+        "AskedForNotificationPermission": null,
+        "NextCalendarNotificationDelivered": null,
+        "PremiumCode": "CORRUPT9541UQK",
+        "PremiumPurchaseTransactionId": null,
+        "PremiumPurchaseAcknowledged": false,
+        "PremiumPurchaseAttempted": true,
+        "CalendarId": "qc2026"
+    },
+    "Characters": [
+        {
+            "UniqueId": "3a2baf80-dbbf-4291-b2c1-b3f818635d2e",
+            "Name": "Felix Factotum",
+            "ClassId": 20269,
+            "Level": 7,
+            "CurrentHp": 14,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 3,
+            "CurrentGold": 14,
+            "BoonCount": 1,
+            "CurrentMinions": 2,
+            "Inventory": [],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "danger sense",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "investigator",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "custom surge points",
+                    "Charges": 5
+                },
+                {
+                    "AbilityId": "athletic surge",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "mental surge",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "presence surge",
+                    "Charges": 0
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": null,
+            "LastUseDate": "2026-01-22T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": true,
+            "CustomClassType": 2,
+            "CustomHealth": 14,
+            "CustomAttack": 2,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 2,
+            "CustomDamageTrackIndex": 2,
+            "CustomPrimaryStats": {
+                "Strength": 20,
+                "Dexterity": 20,
+                "Constitution": 20,
+                "Intellect": 20,
+                "Wisdom": 20,
+                "Charisma": 20
+            },
+            "CustomAbilities": [
+                {
+                    "AbilityId": "danger sense",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "investigator",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "athletic surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "mental surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "presence surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                }
+            ],
+            "CustomProfileImage": "custom_52",
+            "RollLogEntries": [
+                {
+                    "Id": "abe7a2d6-60d8-43c8-8a2a-afdba1860a72",
+                    "Description": "01/21/26 - Charisma - 17"
+                },
+                {
+                    "Id": "2efa6ceb-1e29-4f41-9090-8ad1006c14b4",
+                    "Description": "01/21/26 - Backpack Loot - 10"
+                },
+                {
+                    "Id": "2b59ccbd-593d-42b2-a004-1250e5579468",
+                    "Description": "01/21/26 - Backpack Loot - 9"
+                }
+            ]
+        }
+    ],
+    "SystemSettings": {
+        "RefreshDailyAbilitiesReminder": true,
+        "DropShadowOnText": false
+    }
+}
+
+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
+
+{
+    "SystemData": {
+        "LastSaveVersion": "1.1.1",
+        "CharacterList": null,
+        "NotificationsAllowed_PlayReminder": null,
+        "NotificationsAllowed_General": null,
+        "AskedForNotificationPermission": null,
+        "NextCalendarNotificationDelivered": null,
+        "PremiumCode": "CORRUPT9541UQK",
+        "PremiumPurchaseTransactionId": null,
+        "PremiumPurchaseAcknowledged": false,
+        "PremiumPurchaseAttempted": true,
+        "CalendarId": "qc2026"
+    },
+    "Characters": [
+        {
+            "UniqueId": "6c2b02a4-352c-4169-98f3-cbbc63a5a90e",
+            "Name": "Felix Factotum",
+            "ClassId": 20269,
+            "Level": 1,
+            "CurrentHp": 14,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 3,
+            "CurrentGold": 14,
+            "BoonCount": 1,
+            "CurrentMinions": 2,
+            "Inventory": [],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "custom surge points",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "danger sense",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "investigator",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "athletic surge",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "mental surge",
+                    "Charges": 0
+                },
+                {
+                    "AbilityId": "presence surge",
+                    "Charges": 0
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": null,
+            "LastUseDate": "2026-01-22T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": true,
+            "CustomClassType": 2,
+            "CustomHealth": 14,
+            "CustomAttack": 2,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 2,
+            "CustomDamageTrackIndex": 2,
+            "CustomPrimaryStats": {
+                "Strength": -2,
+                "Dexterity": 2,
+                "Constitution": -4,
+                "Intellect": 4,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": [
+                {
+                    "AbilityId": "danger sense",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "investigator",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "athletic surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "mental surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                },
+                {
+                    "AbilityId": "presence surge",
+                    "AbilityLevel": 1,
+                    "AbilityNameOverride": ""
+                }
+            ],
+            "CustomProfileImage": "custom_52",
+            "RollLogEntries": [
+                {
+                    "Id": "abe7a2d6-60d8-43c8-8a2a-afdba1860a72",
+                    "Description": "01/21/26 - Charisma - 17"
+                },
+                {
+                    "Id": "2efa6ceb-1e29-4f41-9090-8ad1006c14b4",
+                    "Description": "01/21/26 - Backpack Loot - 10"
+                },
+                {
+                    "Id": "2b59ccbd-593d-42b2-a004-1250e5579468",
+                    "Description": "01/21/26 - Backpack Loot - 9"
+                }
+            ]
+        },
+        {
+            "UniqueId": "3783e9ef-d4e1-4f11-aa8e-447c4dfbca54",
+            "Name": "Zeraphine Morgrave",
+            "ClassId": 20265,
+            "Level": 1,
+            "CurrentHp": 9,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 3,
+            "CurrentGold": 12,
+            "BoonCount": 1,
+            "CurrentMinions": 2,
+            "Inventory": [
+                "combat tonic",
+                "Wolfsbane"
+            ],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "reroll cha",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "vampire surges",
+                    "Charges": 1
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": null,
+            "LastUseDate": "2026-01-21T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": false,
+            "CustomClassType": 0,
+            "CustomHealth": 0,
+            "CustomAttack": 0,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 0,
+            "CustomDamageTrackIndex": 0,
+            "CustomPrimaryStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": null,
+            "CustomProfileImage": null,
+            "RollLogEntries": [
+                {
+                    "Id": "2684a9c7-40dc-4216-93c0-cfcc58ed2ed8",
+                    "Description": "01/21/26 - Charisma - 20"
+                },
+                {
+                    "Id": "1a1f3812-cdf4-4e90-b188-d0c9d5ae575c",
+                    "Description": "01/21/26 - Intellect - 2"
+                },
+                {
+                    "Id": "0685606e-09f1-4282-bd77-c30873b312c1",
+                    "Description": "01/21/26 - Wisdom - 4"
+                },
+                {
+                    "Id": "bd6da79d-0f6d-4c03-ab20-7a75b9035922",
+                    "Description": "01/21/26 - Misc Roll - 4"
+                },
+                {
+                    "Id": "0ea98ebc-7f44-4ab2-8f60-e8a7162bd262",
+                    "Description": "01/21/26 - Damage  - 2"
+                },
+                {
+                    "Id": "1e6e3ca2-97cb-42ab-86c4-641986547b72",
+                    "Description": "01/21/26 - Damage  - 2"
+                },
+                {
+                    "Id": "4ef309ee-2f13-43fd-b929-90c2e66ecf83",
+                    "Description": "01/21/26 - Damage  - 6"
+                },
+                {
+                    "Id": "c610daed-2bcc-4782-9027-9ff70417d2c1",
+                    "Description": "01/21/26 - Attack - 33"
+                },
+                {
+                    "Id": "b6e6e76b-7668-4eca-8099-cae9109917ed",
+                    "Description": "01/21/26 - Defense - 18"
+                },
+                {
+                    "Id": "3d11969b-3444-43db-80ee-69b884f2cecb",
+                    "Description": "01/21/26 - Damage  - 1"
+                },
+                {
+                    "Id": "ca022dde-7a6e-428c-9af9-2af785a46d01",
+                    "Description": "01/21/26 - Attack - 11"
+                },
+                {
+                    "Id": "e8443020-2730-4eba-a705-269a04afda4f",
+                    "Description": "01/21/26 - Charisma - 13"
+                },
+                {
+                    "Id": "86f48890-4054-45c9-a88d-3358a592b6c3",
+                    "Description": "01/21/26 - Charisma - 8"
+                },
+                {
+                    "Id": "28280f66-6b76-4cc1-96df-939b3e2a5445",
+                    "Description": "01/21/26 - Charisma - 21"
+                },
+                {
+                    "Id": "44978b18-f886-4311-b603-c5505f1de20a",
+                    "Description": "01/21/26 - Constitution - 20"
+                },
+                {
+                    "Id": "1cf04665-2f64-482d-956e-8baadbb44b17",
+                    "Description": "01/21/26 - Strength - 10"
+                },
+                {
+                    "Id": "e7954c09-0a02-48b2-a085-bac86b0c61a9",
+                    "Description": "01/21/26 - Damage  - 5"
+                },
+                {
+                    "Id": "deda6f25-701e-480e-8eee-19257d2f7524",
+                    "Description": "01/21/26 - Strength - 13"
+                },
+                {
+                    "Id": "70a8531e-6ecd-4914-acb9-b96f9f10d3df",
+                    "Description": "01/21/26 - Damage  - 5"
+                },
+                {
+                    "Id": "727627af-f229-49a0-94d6-8663fb9f3c02",
+                    "Description": "01/21/26 - Intellect - 2"
+                },
+                {
+                    "Id": "2183c692-4727-4624-bc94-4b0fd9bdcbcc",
+                    "Description": "01/21/26 - Charisma - 12"
+                },
+                {
+                    "Id": "a4fddb52-e36c-465d-94f7-86b19a0de8af",
+                    "Description": "01/21/26 - Intellect - 20"
+                },
+                {
+                    "Id": "68eeb95a-1a49-4ecd-bb85-31bd52db35b0",
+                    "Description": "01/21/26 - Wisdom - 2"
+                },
+                {
+                    "Id": "a31c0e2c-0f23-411a-9d9b-178b59c9aa24",
+                    "Description": "01/21/26 - Constitution - 8"
+                },
+                {
+                    "Id": "2a0944d4-a3f4-4609-8747-664747acc499",
+                    "Description": "01/21/26 - Dexterity - 9"
+                },
+                {
+                    "Id": "ca251352-e897-4faf-9166-78423dbb2d55",
+                    "Description": "01/21/26 - Strength - 0"
+                },
+                {
+                    "Id": "44132e5d-d30a-49d1-800e-0e545ffd32cf",
+                    "Description": "01/21/26 - Defense - 17"
+                },
+                {
+                    "Id": "56e55d2d-bec4-4260-bc6f-b55dcf099199",
+                    "Description": "01/21/26 - Attack - 16"
+                },
+                {
+                    "Id": "6561c35f-d8a9-407e-aa24-79fd12df6f1d",
+                    "Description": "01/21/26 - Intellect - 3"
+                },
+                {
+                    "Id": "3cf969a1-b5da-40f7-9ee6-f81764240b4d",
+                    "Description": "01/21/26 - Constitution - 10"
+                },
+                {
+                    "Id": "5abfcc84-4bfd-4865-b69d-41c6cbd99a55",
+                    "Description": "01/21/26 - Dexterity - 0"
+                },
+                {
+                    "Id": "dbfd6465-8955-4209-88d9-83cd761e4b28",
+                    "Description": "01/21/26 - Intellect - 2"
+                },
+                {
+                    "Id": "bef53a77-bbef-4344-a98d-ffd3a00f7610",
+                    "Description": "01/21/26 - Damage  - 8"
+                },
+                {
+                    "Id": "283c23e8-5817-4099-becb-736c37637bfb",
+                    "Description": "01/21/26 - Attack - 17"
+                },
+                {
+                    "Id": "bd4642d6-2d03-4459-b77c-556a4613d5e1",
+                    "Description": "01/21/26 - Charisma - 14"
+                },
+                {
+                    "Id": "333984d6-c733-4fb4-baa3-8195a67b3e36",
+                    "Description": "01/21/26 - Charisma - 3"
+                },
+                {
+                    "Id": "f01f61ff-a94e-4be2-aa05-f0962042dd5c",
+                    "Description": "01/21/26 - Dexterity - 16"
+                },
+                {
+                    "Id": "9870c11b-ef8f-4086-abdf-11e4c20697bf",
+                    "Description": "01/21/26 - Dexterity - 6"
+                },
+                {
+                    "Id": "bbc89fc2-7a5e-4606-9fab-8ccc7613e307",
+                    "Description": "01/21/26 - Intellect - 4"
+                },
+                {
+                    "Id": "b463e511-1286-44ee-ab39-cbe905f1e7d1",
+                    "Description": "01/21/26 - Charisma - 16"
+                },
+                {
+                    "Id": "3038123c-fe0d-4fbf-95d5-36446ddce9ad",
+                    "Description": "01/21/26 - Charisma - 8"
+                },
+                {
+                    "Id": "a050b382-e440-4529-a9fb-0d0525638f25",
+                    "Description": "01/21/26 - Pickpocket - 4"
+                }
+            ]
+        },
+        {
+            "UniqueId": "e162ceff-8d14-4f74-a32e-3ffb93163080",
+            "Name": "Severin Mortis",
+            "ClassId": 20261,
+            "Level": 1,
+            "CurrentHp": 9,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 0,
+            "CurrentGold": 4,
+            "BoonCount": 0,
+            "CurrentMinions": 0,
+            "Inventory": [
+                "Blightroot"
+            ],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "reroll int",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "necromancer spells",
+                    "Charges": 2
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": null,
+            "LastUseDate": "2026-01-16T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": false,
+            "CustomClassType": 0,
+            "CustomHealth": 0,
+            "CustomAttack": 0,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 0,
+            "CustomDamageTrackIndex": 0,
+            "CustomPrimaryStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": null,
+            "CustomProfileImage": null,
+            "RollLogEntries": [
+                {
+                    "Id": "3f3914b0-7357-4b24-aa77-0dbd9e73e54a",
+                    "Description": "01/13/26 - Dexterity - 11"
+                },
+                {
+                    "Id": "316f6af5-79f0-4951-af14-a160b74b9c90",
+                    "Description": "01/07/26 - Dexterity - 8"
+                },
+                {
+                    "Id": "319389df-3712-4bf3-bcbd-8cafa1c1b948",
+                    "Description": "01/05/26 - Strength - 4"
+                },
+                {
+                    "Id": "70e6e7d9-0e8a-43d6-a5fc-756ecb74970f",
+                    "Description": "01/05/26 - Dexterity - 2"
+                },
+                {
+                    "Id": "041bb754-4ef1-4e99-840b-9fc01c378efe",
+                    "Description": "01/05/26 - Constitution - 9"
+                },
+                {
+                    "Id": "2a3eda12-dd5e-4d4d-8d29-af3662775c60",
+                    "Description": "01/05/26 - Dexterity - 8"
+                },
+                {
+                    "Id": "33ad61dd-7a02-4b1c-9d0b-4a33cf51e782",
+                    "Description": "01/05/26 - Dexterity - 0"
+                }
+            ]
+        },
+        {
+            "UniqueId": "e326d0e8-57cc-4142-b41d-19c1db2105ac",
+            "Name": "Harold",
+            "ClassId": 20261,
+            "Level": 1,
+            "CurrentHp": 10,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 0,
+            "CurrentGold": 4,
+            "BoonCount": 1,
+            "CurrentMinions": 0,
+            "Inventory": [
+                "Moonmoss",
+                "Bonedust"
+            ],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "reroll int",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "necromancer spells",
+                    "Charges": 2
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": "Spell Effectiveness 5\n",
+            "LastUseDate": "2026-01-05T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": false,
+            "CustomClassType": 0,
+            "CustomHealth": 0,
+            "CustomAttack": 0,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 0,
+            "CustomDamageTrackIndex": 0,
+            "CustomPrimaryStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": null,
+            "CustomProfileImage": null,
+            "RollLogEntries": []
+        },
+        {
+            "UniqueId": "7c3b6173-bac6-44e0-85fe-6d5f24bab900",
+            "Name": "Toby",
+            "ClassId": 20261,
+            "Level": 1,
+            "CurrentHp": 7,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 0,
+            "CurrentGold": 4,
+            "BoonCount": 0,
+            "CurrentMinions": 0,
+            "Inventory": [
+                "Blightroot",
+                "NightShade"
+            ],
+            "EquippedItems": [],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "reroll int",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "necromancer spells",
+                    "Charges": 2
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [],
+            "Notes": "Spell Effectiveness 3\n",
+            "LastUseDate": "2026-01-05T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": false,
+            "CustomClassType": 0,
+            "CustomHealth": 0,
+            "CustomAttack": 0,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 0,
+            "CustomDamageTrackIndex": 0,
+            "CustomPrimaryStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": null,
+            "CustomProfileImage": null,
+            "RollLogEntries": []
+        },
+        {
+            "UniqueId": "d4c89428-7f57-41a4-9d1b-5c80ffda8c62",
+            "Name": "Nargle Nightbane",
+            "ClassId": 20264,
+            "Level": 1,
+            "CurrentHp": 5,
+            "CurrentCharges": 0,
+            "CurrentVirtue": 2,
+            "CurrentGold": 5,
+            "BoonCount": 0,
+            "CurrentMinions": 0,
+            "Inventory": [
+                "dragons fire",
+                "combat tonic",
+                "Moonmoss"
+            ],
+            "EquippedItems": [
+                {
+                    "EquipmentType": 6,
+                    "ItemName": "equip_sixth_ring",
+                    "DisplayName": "Eye of Vhyras",
+                    "AssetName": "equip_eye_vhyras",
+                    "Description1": "\u002B1 Dex",
+                    "Description2": "\u002B1 Max Hp",
+                    "SpecialCases": null
+                }
+            ],
+            "LevelUpStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "PlayerAbilityDetails": [
+                {
+                    "AbilityId": "reroll dex",
+                    "Charges": 1
+                },
+                {
+                    "AbilityId": "reroll dmg",
+                    "Charges": 1
+                }
+            ],
+            "InflictedStatusEffects": [],
+            "Wounds": [
+                {
+                    "StatType": 13,
+                    "Value": 1
+                }
+            ],
+            "Notes": "Secured Gate",
+            "LastUseDate": "2026-01-22T00:00:00-06:00",
+            "PlayerUniqueAspectDetails": {
+                "PartyMembers": [],
+                "Pets": []
+            },
+            "IsCustomClass": false,
+            "CustomClassType": 0,
+            "CustomHealth": 0,
+            "CustomAttack": 0,
+            "CustomDefense": 0,
+            "CustomSpellCharges": 0,
+            "CustomDamageTrackIndex": 0,
+            "CustomPrimaryStats": {
+                "Strength": 0,
+                "Dexterity": 0,
+                "Constitution": 0,
+                "Intellect": 0,
+                "Wisdom": 0,
+                "Charisma": 0
+            },
+            "CustomAbilities": null,
+            "CustomProfileImage": null,
+            "RollLogEntries": []
+        }
+    ],
+    "SystemSettings": {
+        "RefreshDailyAbilitiesReminder": true,
+        "DropShadowOnText": false
+    }
+}

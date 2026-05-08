@@ -42,11 +42,17 @@ def printAbilities():
         for pm in data.party:
             skill1 = pm[2]
             skill2 = pm[3]
-            skill, suits, val = skill1.split("/")
-            print(f"{skill} ({suits} >= {val}){': ' + data.skills_dict[skill][0] if skill in data.skills_dict else ''}")
-            if skill2: # party members should all have a second skill, but checking just to be sure.
-                skill, suits, val = skill2.split("/")
+            if data.year == 2024:
+                skill, suits, val = skill1.split("/")
                 print(f"{skill} ({suits} >= {val}){': ' + data.skills_dict[skill][0] if skill in data.skills_dict else ''}")
+                if skill2: # party members should all have a second skill, but checking just to be sure.
+                    skill, suits, val = skill2.split("/")
+                    print(f"{skill} ({suits} >= {val}){': ' + data.skills_dict[skill][0] if skill in data.skills_dict else ''}")
+            elif data.year == 2026:
+                if skill1 and skill1 != "None":
+                    print(f"      {skill1}")
+                if skill2 and skill2 != "None":
+                    print(f"      {skill2}")
         for pm in data.bugs:
             skill1 = pm[2]
             skill2 = pm[3]

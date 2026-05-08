@@ -83,11 +83,10 @@ def printOneFollower(f):
         if condition:
             print(f"      {condition}")
     elif year == "2026":
-        if not skill2:
+        if skill1 and skill1 != "None":
             print(f"      {skill1}")
-        else:
-            print(f"      Spend 1 Energy: {skill1}")
-            print(f"      Spend 1 Energy: {skill2}")
+        if skill2 and skill2 != "None":
+            print(f"      {skill2}")
         if condition:
             print(f"      {condition}")
     else:
